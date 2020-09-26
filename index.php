@@ -6,15 +6,23 @@
 <body class="bg-light ">
 
     <!-- loader start -->
-    <!-- <div class="loader-wrapper">
+    <div class="loader-wrapper">
         <div>
             <img src="./assets/images/loader.gif" alt="loader">
         </div>
-    </div> -->
+    </div>
     <!-- loader end -->
 
     <!--header start-->
-    <?php include('template/header.php') ?>
+    <?php
+    include('template/header.php');
+
+    $category_api = Requests::post($api_endpoint . "product/all/", $header);
+    $category_status = $category_api->success;
+    $category_api_data = json_decode($category_api->body, TRUE);
+    $category_api_data = $category_api_data['data'];
+
+    ?>
     <!--header end-->
 
     <!--slider start-->
@@ -100,7 +108,7 @@
             <div class="tab-prodcut-contain">
                 <ul class="tabs tab-title">
                     <?php
-                    foreach ($dataProduct_categories as $listProduct) {
+                    foreach ($category_list_api_data as $listProduct) {
                     ?>
                     <li class="">
                         <a href="tab-<?= $listProduct['name'] ?>">
@@ -121,25 +129,44 @@
                 <div class="col pr-0">
                     <div class="theme-tab product no-arrow">
                         <div class="tab-content-cls ">
-
                             <!-- looping tab -->
                             <?php
-                            foreach ($dataProduct_categories as $productTabList) {
-                                $dataProductID = $productTabList['id'];
-                            }
+                            //checkpoint untuk memberi class active default tab
+                            $checkPoint = 0;
+                            foreach ($category_list_api_data as $productTabList) {
+                                $dataProductName = $productTabList['name'];
+                                if ($checkPoint == 0) {
+                                    $tabActive = " active default";
+                                } else {
+                                    $tabActive = "";
+                                }
+                                $checkPoint++;
+
                             ?>
-                            <div id="tab-1" class="tab-content active default product">
+                            <div id="tab-<?= $dataProductName ?>" class="tab-content <?= $tabActive ?>">
+
                                 <div class="product-slide-6 product-m no-arrow">
                                     <div>
+                                        <?php
+                                            $tab_product_per_category_api = Requests::post($api_endpoint . "product/category?name=" . $dataProductName, $header);
+                                            $tab_product_status = $tab_product_per_category_api->success;
+                                            $tab_product_data = json_decode($tab_product_per_category_api->body, TRUE);
+                                            $tab_product_data_name = $tab_product_data['data'][0]['name'];
+                                            $tab_product_data_price = $tab_product_data['data'][0]['price'];
+                                            $tab_product_data_price = "Rp " . number_format($tab_product_data_price, 0, ',', '.');
+                                            $tab_product_data_image = $tab_product_data['data'][0]['image'];
+
+                                            if (empty($tab_product_data_image)) {
+                                                $tab_product_data_image = "./assets/images/layout-4/product/1.jpg";
+                                            } else {
+                                                $tab_product_data_image = "https://api.padimall.id/" . $tab_product_data_image[0];
+                                            }
+                                            ?>
                                         <div class="product-box">
                                             <div class="product-imgbox">
                                                 <div class="product-front">
-                                                    <img src="./assets/images/layout-4/product/1.jpg"
-                                                        class="img-fluid  " alt="product">
-                                                </div>
-                                                <div class="product-back">
-                                                    <img src="./assets/images/layout-4/product/a1.jpg"
-                                                        class="img-fluid  " alt="product">
+                                                    <img src=<?= $tab_product_data_image ?> class="img-fluid  "
+                                                        alt="product">
                                                 </div>
                                                 <div class="new-label3">
                                                     <div>new</div>
@@ -151,37 +178,21 @@
                                             <div class="product-detail detail-center detail-inverse">
                                                 <div class="detail-title">
                                                     <div class="detail-left">
-                                                        <div class="rating-star">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
                                                         <a href="">
-                                                            <h6 class="price-title">
-                                                                reader will be distracted.
-                                                            </h6>
+                                                            <h4 class="price-title">
+                                                                <?= $tab_product_data_name ?>
+                                                            </h4>
                                                         </a>
                                                     </div>
-                                                    <div class="detail-right">
-                                                        <div class="check-price">
-                                                            $ 56.21
-                                                        </div>
+                                                    <div class="detail-left">
                                                         <div class="price">
                                                             <div class="price">
-                                                                $ 24.05
+                                                                <?= $tab_product_data_price; ?>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="icon-detail">
-                                                    <button onclick="openCart()" type="button">
-                                                        <i class="ti-bag"></i>
-                                                    </button>
-                                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                                        <i class="ti-heart" aria-hidden="true"></i>
-                                                    </a>
+                                                <!-- <div class="icon-detail m-1">
                                                     <a href="#" data-toggle="modal" data-target="#quick-view"
                                                         title="Quick View">
                                                         <i class="ti-search" aria-hidden="true"></i>
@@ -189,12 +200,15 @@
                                                     <a href="compare.html" title="Compare">
                                                         <i class="fa fa-exchange" aria-hidden="true"></i>
                                                     </a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -210,14 +224,14 @@
                 <div class="col">
                     <div class="slide-6 no-arrow">
                         <?php
-                        foreach ($dataProduct_categories as $listProduct) {
+                        foreach ($category_list_api_data as $listProduct) {
                         ?>
                         <div>
                             <div class="category-contain">
                                 <a href="#">
                                     <div class="img-wrapper">
                                         <img src="http://api.padimall.id/<?= $listProduct['image'] ?>" alt="category"
-                                            class="img-fluid  ">
+                                            class="img-fluid" style="width:110px; height: 110px">
                                     </div>
                                     <div>
                                         <div class="btn-rounded">

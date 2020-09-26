@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="footer-logo">
-                            <img src="./assets/images/layout-4/logo/logo.png" class="img-fluid  " alt="logo">
+                            <img src="./assets/images/padimall_logo.png" class="img-fluid  " alt="logo">
                         </div>
                         <div class="logo-detail">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum

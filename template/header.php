@@ -1,15 +1,10 @@
 <?php
 
-
-
-$productView = new Product();
-
-$dataProduct = $productView->view_product();
-$dataProduct = $dataProduct["result"]['data'];
-// // var_dump($dataProduct["result"]['data']);
-
-$dataProduct_categories = $productView->view_product_categories();
-$dataProduct_categories = $dataProduct_categories["result"]['data'];
+$category_list_api = Requests::post($api_endpoint . "product-category/all/", $header);
+$category_list_api_status = $category_list_api->success;
+$category_list_api_data = json_decode($category_list_api->body, TRUE);
+$category_list_api_data = $category_list_api_data['data'];
+// var_dump($category_list_api_data);
 ?>
 <header>
     <div class="mobile-fix-option"></div>
@@ -80,18 +75,11 @@ $dataProduct_categories = $dataProduct_categories["result"]['data'];
                                         back <i class="fa fa-angle-right pl-2"></i>
                                     </div>
                                 </li>
-                                <li><a href="#">western ware</a></li>
-                                <li><a href="#">TV, Appliances</a></li>
-                                <li><a href="#">Pets Products</a></li>
-                                <li><a href="#">Car, Motorbike</a></li>
-                                <li><a href="#">Industrial Products</a></li>
-                                <li><a href="#">Beauty, Health Products</a></li>
-                                <li><a href="#">Grocery Products </a></li>
-                                <li><a href="#">Sports</a></li>
-                                <li><a href="#">Bags, Luggage</a></li>
-                                <li><a href="#">Movies, Music </a></li>
-                                <li><a href="#">Video Games</a></li>
-                                <li><a href="#">Toys, Baby Products</a></li>
+                                <?php
+                                foreach ($category_list_api_data as $listProduct) {
+                                ?>
+                                <li><a href="#"><?= $listProduct['name'] ?></a></li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <div class="desc-nav-block">
@@ -112,7 +100,7 @@ $dataProduct_categories = $dataProduct_categories["result"]['data'];
                 <div class="col-4">
                     <div class="logo-block">
                         <a href="./">
-                            <img src="./assets/images/layout-4/logo/logo.png" alt="logo" class="img-fluid  ">
+                            <img src="./assets/images/padimall_logo.png" alt="logo" class="img-fluid  ">
                         </a>
                     </div>
                 </div>
@@ -134,9 +122,11 @@ $dataProduct_categories = $dataProduct_categories["result"]['data'];
                                                         <form>
                                                             <div class="form-group"><input type="text"
                                                                     class="form-control" id="exampleInputPassword1"
-                                                                    placeholder="Search a Product"></div>
+                                                                    placeholder="Search a Product">
+                                                            </div>
                                                             <button type="submit" class="btn btn-primary"><i
-                                                                    class="fa fa-search"></i></button>
+                                                                    class="fa fa-search"></i>
+                                                            </button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -185,7 +175,7 @@ $dataProduct_categories = $dataProduct_categories["result"]['data'];
                                     <div class="collapse nav-desk" id="navbarToggleExternalContent">
                                         <ul class="nav-cat title-font">
                                             <?php
-                                            foreach ($dataProduct_categories as $listProduct) {
+                                            foreach ($category_list_api_data as $listProduct) {
                                             ?>
                                             <li><a href="#"><?= $listProduct['name'] ?></a></li>
                                             <?php } ?>
@@ -251,14 +241,21 @@ $dataProduct_categories = $dataProduct_categories["result"]['data'];
                                                                     </div>
                                                                     <div class="menu-content">
                                                                         <ul>
-                                                                            <li><a
+                                                                            <li>
+                                                                                <a
                                                                                     href="product-page(left-sidebar).html">left
-                                                                                    sidebar</a></li>
-                                                                            <li><a
+                                                                                    sidebar
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
                                                                                     href="product-page(right-sidebar).html">right
-                                                                                    sidebar</a></li>
-                                                                            <li><a href="product-page(no-sidebar).html">non
-                                                                                    sidebar</a></li>
+                                                                                    sidebar</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="product-page(no-sidebar).html">non
+                                                                                    sidebar</a>
+                                                                            </li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>

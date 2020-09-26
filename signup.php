@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('template/head.php') ?>
-<?php
+<?php include('template/head.php');
+//jika button signup di tekan
 if (isset($_POST['btn-signup'])) {
-    error_reporting(0);
-    include_once('./controller/sign.php');
     if (isset($_POST['name']) && isset($_POST['nohp']) && isset($_POST['alamat']) && isset($_POST['email']) && isset($_POST['email']) && isset($_POST['katasandi']) && isset($_POST['katasandi_konfirmasi'])) {
-        //jika semua sudah ada
-        $signUp = new Sign();
-        $signProcess = $signUp->sign_up($_POST['name'], $_POST['alamat'], $_POST['nohp'], $_POST['email'], $_POST['katasandi'], $_POST['katasandi_konfirmasi']);
-        var_dump($signProcess);
+        $inputan = "name=" . $_POST['name'] . "&address=" . $_POST['alamat'] . "&phone=" . $_POST['nohp'] . "&email=" . $_POST['email'] . "&password=" . $_POST['katasandi'] . "&password_confirmation=" . $_POST['katasandi_konfirmasi'];
+
+        $signup_api = Requests::post($api_endpoint . "signup?" . $inputan, $header);
+        $signup_status = $signup_api->success;
+        $signup_api_data = json_decode($signup_api->body, TRUE);
+        $signup_api_data = $signup_api_data['message'];
+        var_dump($signup_api_data);
     } else {
-        //check inputan apakah sudah masuk semua atau tidak
+        //warning bahwa inputannya belum lengkap
     }
 } else {
-    // echo BASE_URL;
 }
 
 ?>
@@ -23,11 +23,11 @@ if (isset($_POST['btn-signup'])) {
 <body class="bg-light ">
 
     <!-- loader start -->
-    <!-- <div class="loader-wrapper">
+    <div class="loader-wrapper">
         <div>
             <img src="./assets/images/loader.gif" alt="loader">
         </div>
-    </div> -->
+    </div>
     <!-- loader end -->
 
     <!--header start-->
