@@ -43,7 +43,7 @@ $category_list_api_data = $category_list_api_data['data'];
                         <div class="language-block">
                             <div class="language-dropdown">
                                 <span class="language-dropdown-click">
-                                    englishEnglish <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    English <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </span>
                                 <ul class="language-dropdown-open">
                                     <li><a href="#">Indonesia</a></li>
@@ -177,7 +177,9 @@ $category_list_api_data = $category_list_api_data['data'];
                                             <?php
                                             foreach ($category_list_api_data as $listProduct) {
                                             ?>
-                                            <li><a href="#"><?= $listProduct['name'] ?></a></li>
+                                            <li><a
+                                                    href="product-category?name=<?= $listProduct['name'] ?>"><?= $listProduct['name'] ?></a>
+                                            </li>
                                             <?php } ?>
                                         </ul>
                                     </div>

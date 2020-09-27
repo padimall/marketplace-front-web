@@ -109,12 +109,18 @@
                 <ul class="tabs tab-title">
                     <?php
                     foreach ($category_list_api_data as $listProduct) {
+                        $jumlahProductCategory = $listProduct['count_product'];
+                        if (is_null($jumlahProductCategory)) {
+                        } else {
                     ?>
                     <li class="">
                         <a href="tab-<?= $listProduct['name'] ?>">
                             <?= $listProduct['name'] ?>
                         </a>
                     </li>
+                    <?php
+                        }
+                        ?>
                     <?php } ?>
                 </ul>
             </div>
@@ -162,45 +168,16 @@
                                                 $tab_product_data_image = "https://api.padimall.id/" . $tab_product_data_image[0];
                                             }
                                             ?>
-                                        <div class="product-box">
+                                        <div class="product-box ">
                                             <div class="product-imgbox">
                                                 <div class="product-front">
                                                     <img src=<?= $tab_product_data_image ?> class="img-fluid  "
                                                         alt="product">
                                                 </div>
-                                                <div class="new-label3">
-                                                    <div>new</div>
-                                                </div>
-                                                <div class="on-sale3">
-                                                    on sale
-                                                </div>
                                             </div>
-                                            <div class="product-detail detail-center detail-inverse">
-                                                <div class="detail-title">
-                                                    <div class="detail-left">
-                                                        <a href="">
-                                                            <h4 class="price-title">
-                                                                <?= $tab_product_data_name ?>
-                                                            </h4>
-                                                        </a>
-                                                    </div>
-                                                    <div class="detail-left">
-                                                        <div class="price">
-                                                            <div class="price">
-                                                                <?= $tab_product_data_price; ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="icon-detail m-1">
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"
-                                                        title="Quick View">
-                                                        <i class="ti-search" aria-hidden="true"></i>
-                                                    </a>
-                                                    <a href="compare.html" title="Compare">
-                                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                    </a>
-                                                </div> -->
+                                            <div class="product-detail detail-center1 pt-3">
+                                                <h4><?= $tab_product_data_name ?></h4>
+                                                <span class="detail-price"><?= $tab_product_data_price; ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -228,10 +205,10 @@
                         ?>
                         <div>
                             <div class="category-contain">
-                                <a href="#">
+                                <a href="product-category?name=<?= $listProduct['name'] ?>">
                                     <div class="img-wrapper">
                                         <img src="http://api.padimall.id/<?= $listProduct['image'] ?>" alt="category"
-                                            class="img-fluid" style="width:110px; height: 110px">
+                                            class="img-fluid" style="width:110px; height: 97px">
                                     </div>
                                     <div>
                                         <div class="btn-rounded">
