@@ -46,4 +46,5 @@ $header = array(
     <link rel="stylesheet" type="text/css" href="./assets/css/color4.css" media="screen" id="color">
 
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <!-- Sistem Pintar is here -->
 </head>
