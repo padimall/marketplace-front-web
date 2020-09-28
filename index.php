@@ -129,7 +129,7 @@
     <!--tab product-->
 
     <!-- product tab  -->
-    <section class="section-py-space ratio_square product">
+    <section class="ratio_asos section-big-py-space">
         <div class="custom-container">
             <div class="row">
                 <div class="col pr-0">
@@ -150,37 +150,40 @@
 
                             ?>
                             <div id="tab-<?= $dataProductName ?>" class="tab-content <?= $tabActive ?>">
-
-                                <div class="product-slide-6 product-m no-arrow">
-                                    <div>
-                                        <?php
-                                            $tab_product_per_category_api = Requests::post($api_endpoint . "product/category?name=" . $dataProductName, $header);
-                                            $tab_product_status = $tab_product_per_category_api->success;
-                                            $tab_product_data = json_decode($tab_product_per_category_api->body, TRUE);
-                                            $tab_product_data_name = $tab_product_data['data'][0]['name'];
-                                            $tab_product_data_price = $tab_product_data['data'][0]['price'];
-                                            $tab_product_data_price = "Rp " . number_format($tab_product_data_price, 0, ',', '.');
-                                            $tab_product_data_image = $tab_product_data['data'][0]['image'];
-
-                                            if (empty($tab_product_data_image)) {
-                                                $tab_product_data_image = "./assets/images/layout-4/product/1.jpg";
+                                <div class="product-slide-6 product-m no-arrow product">
+                                    <?php
+                                        $tab_product_per_category_api = Requests::post($api_endpoint . "product/category?name=" . $dataProductName, $header);
+                                        $tab_product_status = $tab_product_per_category_api->success;
+                                        $tab_product_data = json_decode($tab_product_per_category_api->body, TRUE);
+                                        $tab_product_data = $tab_product_data['data'];
+                                        foreach ($tab_product_data as $tab_product_data_view) {
+                                            // var_dump($tab_product_data_view);
+                                            $tab_product_data_view_name = $tab_product_data_view['name'];
+                                            $tab_product_data_view_price = "Rp " . number_format($tab_product_data_view['price'], 0, ',', '.');
+                                            $tab_product_data_view_image = $tab_product_data_view['image'];
+                                            if (empty($tab_product_data_view_image)) {
+                                                $tab_product_data_view_image = "./assets/images/layout-4/product/1.jpg";
                                             } else {
-                                                $tab_product_data_image = "https://api.padimall.id/" . $tab_product_data_image[0];
+                                                $tab_product_data_view_image = "https://api.padimall.id/" . $tab_product_data_view_image[0];
                                             }
-                                            ?>
-                                        <div class="product-box ">
+                                        ?>
+                                    <div>
+                                        <div class="product-box">
                                             <div class="product-imgbox">
                                                 <div class="product-front">
-                                                    <img src=<?= $tab_product_data_image ?> class="img-fluid  "
-                                                        alt="product">
+                                                    <img src=<?= $tab_product_data_view_image ?>
+                                                        class="img-fluid bg-img" alt="product">
                                                 </div>
                                             </div>
                                             <div class="product-detail detail-center1 pt-3">
-                                                <h4><?= $tab_product_data_name ?></h4>
-                                                <span class="detail-price"><?= $tab_product_data_price; ?></span>
+                                                <h4><?= $tab_product_data_view_name ?></h4>
+                                                <span class="detail-price"><?= $tab_product_data_view_price; ?></span>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php
+                                        }
+                                        ?>
                                 </div>
                             </div>
                             <?php
