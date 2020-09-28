@@ -11,14 +11,29 @@ if (isset($_POST['btn-signup'])) {
         $signup_status = $signup_api->success;
         $signup_api_data = json_decode($signup_api->body, TRUE);
         $signup_api_data = $signup_api_data['message'];
-        var_dump($signup_api_data);
+        if ($signup_api_data == "Successfully created user!") {
+            header("Location: signup?success_login ");
+        } else {
+            header("Location: signup?invalid_login ");
+        }
     } else {
         //warning bahwa inputannya belum lengkap
     }
-} else {
+}
+$alertMessage = "";
+if (isset($_GET['invalid_login'])) {
+    //show error of login invalid
+    $alertMessage = '
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  Maaf, silahkan periksa kembali inputan anda
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>';
 }
 
 ?>
+
 
 <body class="bg-light ">
 
@@ -41,6 +56,7 @@ if (isset($_POST['btn-signup'])) {
                 <div class="col-lg-4 offset-lg-4">
                     <div class="theme-card">
                         <h3 class="text-center">Buat Akun</h3>
+                        <?= $alertMessage ?>
                         <form class="theme-form" method="POST" action="">
                             <div class="form-row">
                                 <div class="col-md-12 form-group">

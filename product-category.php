@@ -56,7 +56,7 @@
                                                             <div class="product-imgbox">
                                                                 <div class="product-front">
                                                                     <img src="<?= $product_category_show_image ?>"
-                                                                        class="img-fluid" alt="product">
+                                                                        class="img-fluid bg-img" alt="product">
                                                                 </div>
                                                             </div>
                                                             <div class="product-detail detail-center1 pt-2">
