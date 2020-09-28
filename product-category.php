@@ -74,7 +74,8 @@
                                                     ?>
                                                 <div
                                                     class="col-xl-12 col-lg-12 col-md-12 col-12 text-center col-grid-box">
-                                                    <h4>Maaf, untuk saat ini belum ada produk di kategori ini</h4>
+                                                    <img alt="" class="img-fluid" src="./assets/images/no-product.png">
+                                                    <h3>Maaf, untuk saat ini belum ada produk di kategori ini</h3>
                                                 </div>
                                                 <?php
                                                 }

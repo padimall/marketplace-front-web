@@ -78,7 +78,9 @@ $category_list_api_data = $category_list_api_data['data'];
                                 <?php
                                 foreach ($category_list_api_data as $listProduct) {
                                 ?>
-                                <li><a href="#"><?= $listProduct['name'] ?></a></li>
+                                <li><a
+                                        href="product-category?name=<?= $listProduct['name'] ?>"><?= $listProduct['name'] ?></a>
+                                </li>
                                 <?php } ?>
                             </ul>
                         </div>
@@ -100,7 +102,7 @@ $category_list_api_data = $category_list_api_data['data'];
                 <div class="col-4">
                     <div class="logo-block">
                         <a href="./">
-                            <img src="./assets/images/padimall_logo.png" alt="logo" class="img-fluid  ">
+                            <img src="./assets/images/padimall_logo.png" alt="logo" class="img-fluid">
                         </a>
                     </div>
                 </div>
@@ -170,7 +172,7 @@ $category_list_api_data = $category_list_api_data['data'];
                                         <button class="navbar-toggler" type="button">
                                             <span class="navbar-icon"><i class="fa fa-arrow-down"></i></span>
                                         </button>
-                                        <h5 class="mb-0  text-white title-font">Shop by category</h5>
+                                        <h5 class="mb-0  text-white title-font">Berdasarkan Kategori</h5>
                                     </nav>
                                     <div class="collapse nav-desk" id="navbarToggleExternalContent">
                                         <ul class="nav-cat title-font">
