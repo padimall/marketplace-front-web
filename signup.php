@@ -11,10 +11,12 @@ if (isset($_POST['btn-signup'])) {
         $signup_status = $signup_api->success;
         $signup_api_data = json_decode($signup_api->body, TRUE);
         $signup_api_data = $signup_api_data['message'];
-        if ($signup_api_data == "Successfully created user!") {
+        if ($signup_status) {
             header("Location: signup?success_login ");
+            // var_dump($signup_status);
         } else {
             header("Location: signup?invalid_login ");
+            // var_dump($signup_status);
         }
     } else {
         //warning bahwa inputannya belum lengkap
@@ -25,11 +27,11 @@ if (isset($_GET['invalid_login'])) {
     //show error of login invalid
     $alertMessage = '
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  Maaf, silahkan periksa kembali inputan anda
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>';
+        <span class="text-secondary">Maaf, silahkan periksa kembali inputan anda</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>';
 }
 
 ?>
@@ -67,7 +69,7 @@ if (isset($_GET['invalid_login'])) {
                                 <div class="col-md-12 form-group">
                                     <label for="nohp">No Handphone</label>
                                     <input type="number" class="form-control" id="nohp" name="nohp"
-                                        placeholder="No Handphone" required="">
+                                        placeholder="No Handphone" min="0" required="">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -253,9 +255,11 @@ if (isset($_GET['invalid_login'])) {
                                                     class="btn quantity-left-minus" data-type="minus" data-field=""><i
                                                         class="ti-angle-left"></i></button> </span>
                                             <input type="text" name="quantity" class="form-control input-number"
-                                                value="1"> <span class="input-group-prepend"><button type="button"
-                                                    class="btn quantity-right-plus" data-type="plus" data-field=""><i
-                                                        class="ti-angle-right"></i></button></span>
+                                                value="1">
+                                            <span class="input-group-prepend">
+                                                <button type="button" class="btn quantity-right-plus" data-type="plus"
+                                                    data-field=""><i class="ti-angle-right"></i></button>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
