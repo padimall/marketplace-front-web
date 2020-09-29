@@ -2,6 +2,7 @@
 <html lang="en">
 
 <?php include('template/head.php');
+session_start();
 //jika button signup di tekan
 if (isset($_POST['btn-signup'])) {
     if (isset($_POST['name']) && isset($_POST['nohp']) && isset($_POST['alamat']) && isset($_POST['email']) && isset($_POST['email']) && isset($_POST['katasandi']) && isset($_POST['katasandi_konfirmasi'])) {
@@ -10,32 +11,68 @@ if (isset($_POST['btn-signup'])) {
         $signup_api = Requests::post($api_endpoint . "signup?" . $inputan, $header);
         $signup_status = $signup_api->success;
         $signup_api_data = json_decode($signup_api->body, TRUE);
-        $signup_api_data = $signup_api_data['message'];
         if ($signup_status) {
-            header("Location: signup?success_login ");
-            // var_dump($signup_status);
+            $_SESSION['signupMessage'] = '
+            <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
+                <span class="text-secondary">Maaf, silahkan periksa kembali inputan anda</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true" style="color: #523838">&times;</span>
+                </button>
+            </div>';
+            header("Location: signup");
+            exit();
         } else {
-            header("Location: signup?invalid_login ");
-            // var_dump($signup_status);
+            // header("Location: signup?invalid");
+            $signup_api_data_error = $signup_api_data['errors'];
+            //hitung jumlah error message dari API
+            $countError = count($signup_api_data_error);
+            if ($countError == 2) {
+                $emailError = $signup_api_data_error['email'][0];
+                $phoneError =  $signup_api_data_error['phone'][0];
+                $_SESSION['signupMessage'] = '
+                <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
+                    <span class="text-secondary">Maaf, email dan no hp sudah digunakan.</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color: #523838">&times;</span>
+                    </button>
+                </div>';
+                header("Location: signup");
+                exit();
+            } elseif ($countError == 1) {
+                if (isset($signup_api_data_error['email'][0])) {
+
+                    $_SESSION['signupMessage'] = '
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
+                        <span class="text-secondary">Maaf, email sudah pernah digunakan. Silahkan gunakan email yang berbeda</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: #523838">&times;</span>
+                        </button>
+                        </div>';
+                    header("Location: signup");
+                    exit();
+                    //echo "emailnya sudah dipake";
+                }
+                if (isset($signup_api_data_error['phone'][0])) {
+                    $_SESSION['signupMessage'] = '
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
+                        <span class="text-secondary">Maaf, no hp sudah digunakan. Mohon gunakan nomor lainnya</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: #523838">&times;</span>
+                        </button>
+                    </div>';
+                    header("Location: signup");
+                    exit();
+                    //echo "phone number sudah dipake";
+                }
+            }
+            // var_dump($signup_api_data_error);
         }
     } else {
         //warning bahwa inputannya belum lengkap
     }
 }
-$alertMessage = "";
-if (isset($_GET['invalid_login'])) {
-    //show error of login invalid
-    $alertMessage = '
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <span class="text-secondary">Maaf, silahkan periksa kembali inputan anda</span>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>';
-}
 
 ?>
-
 
 <body class="bg-light ">
 
@@ -58,7 +95,12 @@ if (isset($_GET['invalid_login'])) {
                 <div class="col-lg-4 offset-lg-4">
                     <div class="theme-card">
                         <h3 class="text-center">Buat Akun</h3>
-                        <?= $alertMessage ?>
+                        <?php
+                        if (isset($_SESSION['signupMessage'])) {
+                            echo $_SESSION['signupMessage'];
+                            unset($_SESSION['signupMessage']);
+                        }
+                        ?>
                         <form class="theme-form" method="POST" action="">
                             <div class="form-row">
                                 <div class="col-md-12 form-group">
@@ -86,15 +128,17 @@ if (isset($_GET['invalid_login'])) {
                                 <div class="col-md-12 form-group">
                                     <label for="password">Kata Sandi</label>
                                     <input type="password" class="form-control" id="password" name="katasandi"
-                                        placeholder="Kata Sandi" required="">
+                                        placeholder="Kata Sandi" required="" onchange="check_pass()">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="password">Konfirmasi Kata Sandi</label>
-                                    <input type="password" class="form-control" id="password"
-                                        name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required="">
+                                    <input type="password" class="form-control" id="confirm_password"
+                                        name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required=""
+                                        onchange="check_pass()">
+                                    <small id="message" class="text-danger"></small>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <button name="btn-signup" class="btn btn-normal btn-block rounded">Buat
+                                    <button name="btn-signup" class="btn btn-normal btn-block rounded" id="btnSign">Buat
                                         Akun</button>
                                 </div>
                             </div>
@@ -123,7 +167,17 @@ if (isset($_GET['invalid_login'])) {
         </div>
     </div>
     <!-- tap to top End -->
-
+    <script>
+    function check_pass() {
+        if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
+            document.getElementById('btnSign').disabled = false;
+            document.getElementById('message').innerHTML = "";
+        } else {
+            document.getElementById('btnSign').disabled = true;
+            document.getElementById('message').innerHTML = "Kata sandi anda belum sesuai, silahkan periksa kembali";
+        }
+    }
+    </script>
     <?php include('template/script.php') ?>
 
 </body>
