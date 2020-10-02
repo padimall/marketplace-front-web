@@ -2,6 +2,8 @@
 include('./vendor/rmccue/requests/library/Requests.php');
 // include('./vendor/autoload.php');
 
+session_start();
+
 Requests::register_autoloader();
 
 $api_endpoint = "https://api.padimall.id/api/v1/";

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <?php include('template/head.php');
-session_start();
 
 //jika button signin di tekan
 if (isset($_POST['btn-login'])) {

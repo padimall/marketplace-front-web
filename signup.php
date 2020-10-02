@@ -2,7 +2,6 @@
 <html lang="en">
 
 <?php include('template/head.php');
-session_start();
 //jika button signup di tekan
 if (isset($_POST['btn-signup'])) {
     if (isset($_POST['name']) && isset($_POST['nohp']) && isset($_POST['alamat']) && isset($_POST['email']) && isset($_POST['email']) && isset($_POST['katasandi']) && isset($_POST['katasandi_konfirmasi'])) {
