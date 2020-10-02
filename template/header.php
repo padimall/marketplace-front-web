@@ -13,9 +13,6 @@ $category_list_api_data = $category_list_api_data['data'];
             <div class="row">
                 <div class="col-xl-5 col-md-7 col-sm-6">
                     <div class="top-header-left">
-                        <!-- <div class="shpping-order">
-                                <h6>free shipping on order over $99 </h6>
-                            </div> -->
                         <div class="app-link">
                             <h6>
                                 Download App
@@ -40,7 +37,7 @@ $category_list_api_data = $category_list_api_data['data'];
                                 <li><a href="#">easy returns</a></li>
                             </ul>
                         </div>
-                        <div class="language-block">
+                        <!-- <div class="language-block">
                             <div class="language-dropdown">
                                 <span class="language-dropdown-click">
                                     English <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -53,10 +50,10 @@ $category_list_api_data = $category_list_api_data['data'];
                                     IDR<i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </span>
                                 <ul class="curroncy-dropdown-open">
-                                    <li><a href="#"><i class="fa fa-inr"></i>IDR</a></li>
+                                    <li><a href="#"><i class="fa fa-idr"></i>IDR</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

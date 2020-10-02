@@ -4,8 +4,18 @@
 <?php
 include('template/head.php');
 
+//buat request untuk ambil data detail product
+$product_detail_request = Requests::post($api_endpoint . "product/detail?target_id=" . $_GET['target'], $header);
+$product_detail_request_status = $product_detail_request->success;
+$product_detail_data = json_decode($product_detail_request->body, TRUE);
+$product_detail_data = $product_detail_data['data'];
 
-
+$product_detail_name = $product_detail_data['name'];
+$product_detail_price = "Rp " . number_format($product_detail_data['price'], 0, ',', '.');
+$product_detail_description = $product_detail_data['description'];
+$product_detail_weight = $product_detail_data['weight'];
+$product_detail_stock = $product_detail_data['stock'];
+$product_detail_min_order = $product_detail_data['min_order'];
 ?>
 
 <body class="bg-light ">
@@ -58,20 +68,16 @@ include('template/head.php');
                     </div>
                     <div class="col-lg-8 rtl-text">
                         <div class="product-right">
-                            <h2>Women Pink Shirt</h2>
-                            <h3>$32.96</h3>
+                            <h2><?= $product_detail_name ?></h2>
+                            <h3><?= $product_detail_price ?></h3>
                             <div class="product-buttons">
-                                <a href="#" data-toggle="modal" data-target="#addtocart" class="btn btn-normal">add to
-                                    cart</a>
-                                <a href="#" class="btn btn-normal">buy now</a>
+                                <a href="#" data-toggle="modal" data-target="#addtocart" class="btn btn-normal">Tambah
+                                    ke Keranjang</a>
+                                <a href="#" class="btn btn-normal">Beli Sekarang</a>
                             </div>
                             <div class="border-product">
                                 <h6 class="product-title">Deskripsi Produk</h6>
-                                <p class="text-justify">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-                                    accusantium
-                                    doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore
-                                    veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam
-                                    voluptatem,</p>
+                                <p class="text-justify"><?= $product_detail_description ?></p>
                             </div>
                             <div class="border-product">
                                 <div class="row">
@@ -83,15 +89,41 @@ include('template/head.php');
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Berat </p>
-                                                    <p class="float-right">50Kg</p>
+                                                    <p class="float-right"><?= $product_detail_weight ?>Kg</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Stock </p>
-                                                    <p class="float-right">50Kg</p>
+                                                    <p class="float-right"><?= $product_detail_stock ?>Kg</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Minimal Pemesanan </p>
-                                                    <p class="float-right">50Kg</p>
+                                                    <p class="float-right"><?= $product_detail_min_order ?>Kg</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-product">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h6 class="product-title">Info Produk</h6>
+                                    </div>
+                                    <div class="col-md-12 mt-2">
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <p class="float-left font-weight-bold">Berat </p>
+                                                    <p class="float-right"><?= $product_detail_weight ?>Kg</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="float-left font-weight-bold">Stock </p>
+                                                    <p class="float-right"><?= $product_detail_stock ?>Kg</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="float-left font-weight-bold">Minimal Pemesanan </p>
+                                                    <p class="float-right"><?= $product_detail_min_order ?>Kg</p>
                                                 </div>
                                             </div>
                                         </div>

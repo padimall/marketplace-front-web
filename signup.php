@@ -22,7 +22,6 @@ if (isset($_POST['btn-signup'])) {
             header("Location: signup?success");
             exit();
         } else {
-            // header("Location: signup?invalid");
             $signup_api_data_error = $signup_api_data['errors'];
             //hitung jumlah error message dari API
             $countError = count($signup_api_data_error);

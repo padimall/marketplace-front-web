@@ -16,12 +16,6 @@
     <!--header start-->
     <?php
     include('template/header.php');
-
-    // $category_api = Requests::post($api_endpoint . "product/all/", $header);
-    // $category_status = $category_api->success;
-    // $category_api_data = json_decode($category_api->body, TRUE);
-    // $category_api_data = $category_api_data['data'];
-
     ?>
     <!--header end-->
 
