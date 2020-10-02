@@ -14,7 +14,7 @@ if (isset($_POST['btn-login'])) {
 
     //jika berhasil masuk
     if ($signin_status == true) {
-        exit();
+        $_SESSION['bearerKey'] = $signin_api_data['access_token'];
     } else {
         $_SESSION['signinMessage'] = '
                 <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
@@ -27,7 +27,6 @@ if (isset($_POST['btn-login'])) {
         exit();
     }
 }
-
 ?>
 
 <body class="bg-light ">
@@ -70,8 +69,6 @@ if (isset($_POST['btn-login'])) {
                             <button name="btn-login" class="btn btn-normal">Masuk</button>
                             <a class="float-right txt-default mt-2" href="#">Lupa Kata Sandi</a>
                         </form>
-                        <!-- <p class="mt-3">Sign up for a free account at our store. Registration is quick and easy. It
-                            allows you to be able to order from our shop. To start shopping click register.</p> -->
                         <div class="mt-2">
                             Belum punya akun? <a href="signup" class="txt-default pt-3">Buat Sekarang</a>
                         </div>
