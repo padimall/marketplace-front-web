@@ -17,10 +17,10 @@
     <?php
     include('template/header.php');
 
-    $category_api = Requests::post($api_endpoint . "product/all/", $header);
-    $category_status = $category_api->success;
-    $category_api_data = json_decode($category_api->body, TRUE);
-    $category_api_data = $category_api_data['data'];
+    // $category_api = Requests::post($api_endpoint . "product/all/", $header);
+    // $category_status = $category_api->success;
+    // $category_api_data = json_decode($category_api->body, TRUE);
+    // $category_api_data = $category_api_data['data'];
 
     ?>
     <!--header end-->
@@ -168,18 +168,23 @@
                                             }
                                         ?>
                                     <div>
-                                        <div class="product-box">
-                                            <div class="product-imgbox">
-                                                <div class="product-front">
-                                                    <img src=<?= $tab_product_data_view_image ?>
-                                                        class="img-fluid bg-img" alt="product">
+                                        <a
+                                            href="product-detail?name=<?= $tab_product_data_view_name ?>&target=<?= $tab_product_data_view['id'] ?>">
+                                            <div class="product-box">
+                                                <div class="product-imgbox">
+                                                    <div class="product-front">
+                                                        <img src=<?= $tab_product_data_view_image ?>
+                                                            class="img-fluid bg-img" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail detail-center1 pt-3">
+                                                    <h4 class="text-success" style="text-decoration: none;">
+                                                        <?= $tab_product_data_view_name ?></h4>
+                                                    <span
+                                                        class="detail-price"><?= $tab_product_data_view_price; ?></span>
                                                 </div>
                                             </div>
-                                            <div class="product-detail detail-center1 pt-3">
-                                                <h4><?= $tab_product_data_view_name ?></h4>
-                                                <span class="detail-price"><?= $tab_product_data_view_price; ?></span>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                     <?php
                                         }

@@ -4,7 +4,7 @@ $category_list_api = Requests::post($api_endpoint . "product-category/all/", $he
 $category_list_api_status = $category_list_api->success;
 $category_list_api_data = json_decode($category_list_api->body, TRUE);
 $category_list_api_data = $category_list_api_data['data'];
-// var_dump($category_list_api_data);
+// var_dump($category_list_api_data);   
 ?>
 <header>
     <div class="mobile-fix-option"></div>
@@ -109,8 +109,7 @@ $category_list_api_data = $category_list_api_data['data'];
                 <div class="col-4">
                     <div class="icon-block">
                         <ul>
-                            <li onclick="openAccount()" class="mobile-user onhover-dropdown"><a href="#"><i
-                                        class="icon-user"></i></a>
+                            <li class="mobile-user onhover-dropdown"><a href="signup"><i class="icon-user"></i></a>
 
                             </li>
                             <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>
@@ -137,11 +136,11 @@ $category_list_api_data = $category_list_api_data['data'];
                                     </div>
                                 </div>
                             </li>
-                            <li class="mobile-wishlist" onclick="openWishlist()"><a href="#"><i
+                            <!-- <li class="mobile-wishlist" onclick="openWishlist()"><a href="#"><i
                                         class="icon-heart"></i></a></li>
                             <li class="mobile-setting mobile-setting-hover" onclick="openSetting()"><a href="#"><i
                                         class="icon-settings"></i></a>
-                            </li>
+                            </li> -->
                             <li class="mobile-cart cart-hover-div" onclick="openCart()">
                                 <a href="#">
                                     <i class="icon-shopping-cart "></i>
@@ -151,9 +150,9 @@ $category_list_api_data = $category_list_api_data['data'];
                                 </a>
                             </li>
                         </ul>
-                        <span class="toggle-nav">
+                        <!-- <span class="toggle-nav">
                             <i class="fa fa-bars"></i>
-                        </span>
+                        </span> -->
                     </div>
                 </div>
             </div>

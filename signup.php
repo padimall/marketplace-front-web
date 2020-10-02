@@ -13,13 +13,13 @@ if (isset($_POST['btn-signup'])) {
         $signup_api_data = json_decode($signup_api->body, TRUE);
         if ($signup_status) {
             $_SESSION['signupMessage'] = '
-            <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
-                <span class="text-secondary">Maaf, silahkan periksa kembali inputan anda</span>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="text-secondary">Berhasil mendaftar, silahkan masuk untuk melanjutkan</span>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true" style="color: #523838">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>';
-            header("Location: signup");
+            header("Location: signup?success");
             exit();
         } else {
             // header("Location: signup?invalid");
@@ -144,8 +144,8 @@ if (isset($_POST['btn-signup'])) {
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12 ">
-                                    <p>Sudah punya akun? <a href="login" class="txt-default">Klik</a> disini
-                                        untuk&nbsp;<a href="login" class="txt-default">Masuk</a></p>
+                                    <p>Sudah punya akun? <a href="signin" class="txt-default">Klik</a> disini
+                                        untuk&nbsp;<a href="signin" class="txt-default">Masuk</a></p>
                                 </div>
                             </div>
                         </form>
