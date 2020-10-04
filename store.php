@@ -22,26 +22,6 @@ if ($profile_api_status) {
     $profile_api_data_phone = $profile_api_data['phone'];
 }
 
-//check session
-if (isset($_SESSION['bearerKey'])) {
-    if (isset($_SESSION['login-status-expired'])) {
-        $dateExpired = $_SESSION['login-status-expired'];
-        $dateNow = date("Y-m-d h:i:s");
-
-        if ($dateNow > $dateExpired) {
-            unset($_SESSION['bearerKey']);
-            unset($_SESSION['login-status-expired']);
-            header("Location: signup");
-            exit();
-        }
-    }
-} else {
-    unset($_SESSION['bearerKey']);
-    unset($_SESSION['login-status-expired']);
-    header("Location: signup");
-    exit();
-}
-
 ?>
 
 <body class="bg-light ">

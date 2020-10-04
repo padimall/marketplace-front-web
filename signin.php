@@ -15,6 +15,9 @@ if (isset($_POST['btn-login'])) {
     //jika berhasil masuk
     if ($signin_status == true) {
         $_SESSION['bearerKey'] = $signin_api_data['access_token'];
+        $_SESSION['login-status-expired'] = $signin_api_data['expires_at'];
+        header("Location: profile");
+        exit();
     } else {
         $_SESSION['signinMessage'] = '
                 <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">

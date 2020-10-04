@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Bangkok");
 include('./vendor/rmccue/requests/library/Requests.php');
 
 session_start();

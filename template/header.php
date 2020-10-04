@@ -88,7 +88,24 @@ $category_list_api_data = $category_list_api_data['data'];
                                 <span>+62 822 7466 0962</span>
                             </span>
                             <div class="onhover-dropdown ">
-                                <a href="signup">
+                                <?php
+                                $linkSign = "signup";
+                                if (isset($_SESSION['bearerKey'])) {
+                                    if (isset($_SESSION['login-status-expired'])) {
+                                        $dateExpired = $_SESSION['login-status-expired'];
+                                        $dateNow = date("Y-m-d h:i:s");
+
+                                        if ($dateNow > $dateExpired) {
+                                            $linkSign = "signup";
+                                        } else {
+                                            $linkSign = "profile";
+                                        }
+                                    }
+                                } else {
+                                    $linkSign = "signup";
+                                }
+                                ?>
+                                <a href="<?= $linkSign ?>">
                                     <i class="icon-user mobile-user ">
                                     </i>
                                 </a>
@@ -106,7 +123,9 @@ $category_list_api_data = $category_list_api_data['data'];
                 <div class="col-4">
                     <div class="icon-block">
                         <ul>
-                            <li class="mobile-user onhover-dropdown"><a href="signup"><i class="icon-user"></i></a>
+                            <li class="mobile-user onhover-dropdown">
+                                <a href="<?= $linkSign ?>"><i class="icon-user"></i>
+                                </a>
 
                             </li>
                             <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>

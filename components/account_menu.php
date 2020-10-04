@@ -6,12 +6,12 @@
         </div>
         <div class="block-content ">
             <ul>
-                <li><a href="#">Informasi Akun</a></li>
+                <li><a href="profile">Informasi Akun</a></li>
                 <li><a href="#">Pesanan Saya</a></li>
                 <li><a href="#">Riwayat Pembelian</a></li>
                 <li><a href="#">Toko Saya</a></li>
                 <li><a href="#">Ubah Password</a></li>
-                <li class="last"><a href="#">Keluar</a></li>
+                <li class="last"><a href="signout">Keluar</a></li>
             </ul>
         </div>
     </div>
