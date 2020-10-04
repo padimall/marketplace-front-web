@@ -5,3 +5,11 @@
 /* .product-detail :hover {
     -webkit-animation: none !important;
 } */
+
+.dashboard-right {
+    border-radius: 25px !important;
+}
+
+.dashboard-left {
+    border-radius: 25px !important;
+}
