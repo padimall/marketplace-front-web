@@ -3,12 +3,6 @@
 
 <?php include('template/head.php');
 if (isset($_POST['btn-profile'])) {
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-
-    $profile_update_api = Requests::post($api_endpoint . "user", $header);
 }
 
 $profile_api = Requests::post($api_endpoint . "user", $header);
