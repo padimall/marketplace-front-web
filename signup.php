@@ -126,13 +126,14 @@ if (isset($_POST['btn-signup'])) {
                                 <div class="col-md-12 form-group">
                                     <label for="password">Kata Sandi</label>
                                     <input type="password" class="form-control" id="password" name="katasandi"
-                                        placeholder="Kata Sandi" required="" onchange="check_pass()">
+                                        placeholder="Kata Sandi" required="" onchange="check_pass()"
+                                        onkeypress="return AvoidSpace(event)">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="password">Konfirmasi Kata Sandi</label>
                                     <input type="password" class="form-control" id="confirm_password"
                                         name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required=""
-                                        onchange="check_pass()">
+                                        onchange="check_pass()" onkeypress="return AvoidSpace(event)">
                                     <small id="message" class="text-danger"></small>
                                 </div>
                                 <div class="col-md-12 form-group">
@@ -174,6 +175,11 @@ if (isset($_POST['btn-signup'])) {
             document.getElementById('btnSign').disabled = true;
             document.getElementById('message').innerHTML = "Kata sandi anda belum sesuai, silahkan periksa kembali";
         }
+    }
+
+    function AvoidSpace(event) {
+        var k = event ? event.which : window.event.keyCode;
+        if (k == 32) return false;
     }
     </script>
     <?php include('template/script.php') ?>

@@ -64,7 +64,7 @@ if (isset($_POST['btn-login'])) {
                             <div class="form-group">
                                 <label for="review">Kata Sandi</label>
                                 <input type="password" name="password" class="form-control"
-                                    placeholder="Masukkan kata sandi" required="">
+                                    placeholder="Masukkan kata sandi" required="" onkeypress="return AvoidSpace(event)">
                             </div>
                             <button name="btn-login" class="btn btn-normal">Masuk</button>
                             <a class="float-right txt-default mt-2" href="#">Lupa Kata Sandi</a>
@@ -89,6 +89,13 @@ if (isset($_POST['btn-login'])) {
             <i class="fa fa-angle-double-up"></i>
         </div>
     </div>
+
+    <script>
+    function AvoidSpace(event) {
+        var k = event ? event.which : window.event.keyCode;
+        if (k == 32) return false;
+    }
+    </script>
     <!-- tap to top End -->
     <?php include('template/script.php') ?>
 
