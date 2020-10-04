@@ -158,7 +158,7 @@
                                             if (empty($tab_product_data_view_image)) {
                                                 $tab_product_data_view_image = "./assets/images/layout-4/product/1.jpg";
                                             } else {
-                                                $tab_product_data_view_image = "https://api.padimall.id/" . $tab_product_data_view_image[0];
+                                                $tab_product_data_view_image = $api_image . $tab_product_data_view_image[0]['url'];
                                             }
                                         ?>
                                     <div>

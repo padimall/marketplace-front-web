@@ -6,6 +6,7 @@ session_start();
 Requests::register_autoloader();
 
 $api_endpoint = "https://api.padimall.id/api/v1/";
+$api_image = "https://api.padimall.id/";
 
 if (isset($_SESSION['bearerKey'])) {
     $bearerKey = $_SESSION['bearerKey'];
