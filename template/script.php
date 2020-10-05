@@ -17,6 +17,5 @@
     <script src="./assets/js/bootstrap.js"></script>
 
     <!-- Theme js-->
-    <script src="./assets/js/slider-animat-three.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/modal.js"></script>

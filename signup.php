@@ -121,7 +121,7 @@ if (isset($_POST['btn-signup'])) {
                                 <div class="col-md-12 form-group">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                        required="">
+                                        required="" onkeypress="return AvoidSpace(event)">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="password">Kata Sandi</label>
