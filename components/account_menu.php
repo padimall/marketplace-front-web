@@ -10,7 +10,7 @@
                 <li><a href="#">Pesanan Saya</a></li>
                 <li><a href="#">Riwayat Pembelian</a></li>
                 <li><a href="#">Toko Saya</a></li>
-                <li><a href="#">Ubah Password</a></li>
+                <li><a href="change-password">Ubah Kata Sandi</a></li>
                 <li class="last"><a href="signout">Keluar</a></li>
             </ul>
         </div>
