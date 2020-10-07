@@ -158,7 +158,7 @@
                                             if (empty($tab_product_data_view_image)) {
                                                 $tab_product_data_view_image = "./assets/images/layout-4/product/1.jpg";
                                             } else {
-                                                $tab_product_data_view_image = $api_image . $tab_product_data_view_image[0]['url'];
+                                                $tab_product_data_view_image = $tab_product_data_view_image[0]['url'];
                                             }
                                         ?>
                                     <div>
@@ -209,8 +209,8 @@
                             <div class="category-contain">
                                 <a href="product-category?name=<?= $listProduct['name'] ?>">
                                     <div class="img-wrapper">
-                                        <img src="http://api.padimall.id/<?= $listProduct['image'] ?>" alt="category"
-                                            class="img-fluid" style="width:110px; height: 97px">
+                                        <img src="<?= $listProduct['image'] ?>" alt="category" class="img-fluid"
+                                            style="width:110px; height: 97px">
                                     </div>
                                     <div>
                                         <div class="btn-rounded">
