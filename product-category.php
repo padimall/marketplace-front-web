@@ -47,7 +47,7 @@
                                                         if (empty($product_category_show_image)) {
                                                             $product_category_show_image = "./assets/images/layout-4/product/1.jpg";
                                                         } else {
-                                                            $product_category_show_image = "https://api.padimall.id/" . $product_category_show_image[0];
+                                                            $product_category_show_image = $product_category_show_image[0]['url'];
                                                         }
                                                 ?>
                                                 <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-grid-box">
