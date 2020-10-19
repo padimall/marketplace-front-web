@@ -20,13 +20,6 @@ if (isset($_POST['btn-login'])) {
         exit();
     } else {
         message_failed("Maaf, data pengguna tidak ditemukan");
-        // $_SESSION['signinMessage'] = '
-        //         <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
-        //             <span class="text-secondary">Maaf, data pengguna tidak ditemukan</span>
-        //             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        //                 <span aria-hidden="true" style="color: #523838">&times;</span>
-        //             </button>
-        //         </div>';
         header("Location: signin");
         exit();
     }
@@ -55,10 +48,6 @@ if (isset($_POST['btn-login'])) {
                     <div class="theme-card rounded">
                         <h3 class="text-center">Masuk</h3>
                         <?php
-                        // if (isset($_SESSION['signinMessage'])) {
-                        //     echo $_SESSION['signinMessage'];
-                        //     unset($_SESSION['signinMessage']);
-                        // }
                         message_check();
                         ?>
                         <form class="theme-form" method="POST">
