@@ -89,20 +89,20 @@ $category_list_api_data = $category_list_api_data['data'];
                             </span>
                             <div class="onhover-dropdown ">
                                 <?php
-                                $linkSign = "signup";
+                                $linkSign = "signin";
                                 if (isset($_SESSION['bearerKey'])) {
                                     if (isset($_SESSION['login-status-expired'])) {
                                         $dateExpired = $_SESSION['login-status-expired'];
                                         $dateNow = date("Y-m-d h:i:s");
 
                                         if ($dateNow > $dateExpired) {
-                                            $linkSign = "signup";
+                                            $linkSign = "signin";
                                         } else {
                                             $linkSign = "profile";
                                         }
                                     }
                                 } else {
-                                    $linkSign = "signup";
+                                    $linkSign = "signin";
                                 }
                                 ?>
                                 <a href="<?= $linkSign ?>">

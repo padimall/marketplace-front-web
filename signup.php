@@ -11,14 +11,15 @@ if (isset($_POST['btn-signup'])) {
         $signup_status = $signup_api->success;
         $signup_api_data = json_decode($signup_api->body, TRUE);
         if ($signup_status) {
-            $_SESSION['signupMessage'] = '
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <span class="text-secondary">Berhasil mendaftar, silahkan masuk untuk melanjutkan</span>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>';
-            header("Location: signup?success");
+            message_success("Berhasil mendaftar, silahkan masuk untuk melanjutkan");
+            // $_SESSION['signupMessage'] = '
+            // <div class="alert alert-success alert-dismissible fade show" role="alert">
+            //     <span class="text-secondary">Berhasil mendaftar, silahkan masuk untuk melanjutkan</span>
+            //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            //         <span aria-hidden="true">&times;</span>
+            //     </button>
+            // </div>';
+            header("Location: signin?success");
             exit();
         } else {
             $signup_api_data_error = $signup_api_data['errors'];
@@ -27,37 +28,39 @@ if (isset($_POST['btn-signup'])) {
             if ($countError == 2) {
                 $emailError = $signup_api_data_error['email'][0];
                 $phoneError =  $signup_api_data_error['phone'][0];
-                $_SESSION['signupMessage'] = '
-                <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
-                    <span class="text-secondary">Maaf, email dan no hp sudah digunakan.</span>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color: #523838">&times;</span>
-                    </button>
-                </div>';
+                message_failed("Maaf, email dan no hp sudah digunakan.");
+                // $_SESSION['signupMessage'] = '
+                // <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
+                //     <span class="text-secondary">Maaf, email dan no hp sudah digunakan.</span>
+                //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                //         <span aria-hidden="true" style="color: #523838">&times;</span>
+                //     </button>
+                // </div>';
                 header("Location: signup");
                 exit();
             } elseif ($countError == 1) {
                 if (isset($signup_api_data_error['email'][0])) {
-
-                    $_SESSION['signupMessage'] = '
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
-                        <span class="text-secondary">Maaf, email sudah pernah digunakan. Silahkan gunakan email yang berbeda</span>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true" style="color: #523838">&times;</span>
-                        </button>
-                        </div>';
+                    message_failed("Maaf, email sudah pernah digunakan. Silahkan gunakan email yang berbeda");
+                    // $_SESSION['signupMessage'] = '
+                    // <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
+                    //     <span class="text-secondary">Maaf, email sudah pernah digunakan. Silahkan gunakan email yang berbeda</span>
+                    //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    //         <span aria-hidden="true" style="color: #523838">&times;</span>
+                    //     </button>
+                    //     </div>';
                     header("Location: signup");
                     exit();
                     //echo "emailnya sudah dipake";
                 }
                 if (isset($signup_api_data_error['phone'][0])) {
-                    $_SESSION['signupMessage'] = '
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
-                        <span class="text-secondary">Maaf, no hp sudah digunakan. Mohon gunakan nomor lainnya</span>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true" style="color: #523838">&times;</span>
-                        </button>
-                    </div>';
+                    message_failed("Maaf, no hp sudah digunakan. Mohon gunakan nomor lainnya");
+                    // $_SESSION['signupMessage'] = '
+                    // <div class="alert alert-warning alert-dismissible fade show" role="alert" style="border-color: #f15937">
+                    //     <span class="text-secondary">Maaf, no hp sudah digunakan. Mohon gunakan nomor lainnya</span>
+                    //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    //         <span aria-hidden="true" style="color: #523838">&times;</span>
+                    //     </button>
+                    // </div>';
                     header("Location: signup");
                     exit();
                     //echo "phone number sudah dipake";
@@ -94,10 +97,11 @@ if (isset($_POST['btn-signup'])) {
                     <div class="theme-card">
                         <h3 class="text-center">Buat Akun</h3>
                         <?php
-                        if (isset($_SESSION['signupMessage'])) {
-                            echo $_SESSION['signupMessage'];
-                            unset($_SESSION['signupMessage']);
-                        }
+                        // if (isset($_SESSION['signupMessage'])) {
+                        //     echo $_SESSION['signupMessage'];
+                        //     unset($_SESSION['signupMessage']);
+                        // }
+                        message_check();
                         ?>
                         <form class="theme-form" method="POST" action="">
                             <div class="form-row">
