@@ -11,7 +11,7 @@ $product_detail_data = json_decode($product_detail_request->body, TRUE);
 $product_detail_data = $product_detail_data['data'];
 
 $product_detail_name = $product_detail_data['name'];
-$product_detail_price = "Rp " . number_format($product_detail_data['price'], 0, ',', '.');
+$product_detail_price = rupiah($product_detail_data);
 $product_detail_description = $product_detail_data['description'];
 $product_detail_weight = $product_detail_data['weight'];
 $product_detail_stock = $product_detail_data['stock'];
@@ -57,13 +57,14 @@ $product_detail_image = $product_detail_data['image'];
                     ?>
                     <div class="col-lg-4">
                         <div class="product-slick no-arrow">
+                            sads
                             <?php
                                 foreach ($product_detail_image as $product_detail_image_view) {
                                     $product_detail_image_view_url = $product_detail_image_view['url'];
                                     $product_detail_image_view_id = $product_detail_image_view['id'];
                                 ?>
                             <div>
-                                <img src="<?= $api_image . $product_detail_image_view_url ?>" alt=""
+                                <img src="<?= $product_detail_image_view_url ?>" alt=""
                                     class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?>">
                             </div>
                             <?php } ?>
@@ -77,7 +78,7 @@ $product_detail_image = $product_detail_data['image'];
                                             $product_detail_image_view_id = $product_detail_image_view['id'];
                                         ?>
                                     <div>
-                                        <img src="<?= $api_image . $product_detail_image_view_url ?>" alt=""
+                                        <img src="<?= $product_detail_image_view_url ?>" alt=""
                                             class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?>">
                                     </div>
                                     <?php } ?>

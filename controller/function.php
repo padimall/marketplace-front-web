@@ -25,7 +25,7 @@ function message_success($message)
 function message_failed($message)
 {
     $_SESSION['message'] = '
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="background-color: #f8d7da !important; border-color: #f5c6cb !important ">
                         <span class="text-secondary">' . $message . '</span>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -40,4 +40,9 @@ function message_check()
         echo $_SESSION['message'];
         unset($_SESSION['message']);
     }
+}
+
+function rupiah($string)
+{
+    return "Rp " . number_format($string, 0, ',', '.');
 }

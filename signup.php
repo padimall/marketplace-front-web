@@ -21,12 +21,12 @@ if (isset($_POST['btn-signup'])) {
             if ($countError == 2) {
                 $emailError = $signup_api_data_error['email'][0];
                 $phoneError =  $signup_api_data_error['phone'][0];
-                message_failed("Maaf, email dan no hp sudah digunakan.");
+                message_failed("Maaf, email atau no hp sudah digunakan.");
                 header("Location: signup");
                 exit();
             } elseif ($countError == 1) {
                 if (isset($signup_api_data_error['email'][0])) {
-                    message_failed("Maaf, email sudah pernah digunakan. Silahkan gunakan email yang berbeda");
+                    message_failed("Maaf, email sudah digunakan.");
                     header("Location: signup");
                     exit();
                 }
@@ -35,6 +35,9 @@ if (isset($_POST['btn-signup'])) {
         }
     } else {
         //warning bahwa inputannya belum lengkap
+        message_failed("Maaf, silahkan periksa kembali inputan anda");
+        header("Location: signup");
+        exit();
     }
 }
 
@@ -74,7 +77,8 @@ if (isset($_POST['btn-signup'])) {
                                 <div class="col-md-12 form-group">
                                     <label for="nohp">No Handphone</label>
                                     <input type="number" class="form-control" id="nohp" name="nohp"
-                                        placeholder="No Handphone" min="0" required="">
+                                        placeholder="No Handphone" min="0" required="" onchange="check_pass()"
+                                        onkeypress="return AvoidSpace(event)">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -91,14 +95,12 @@ if (isset($_POST['btn-signup'])) {
                                 <div class="col-md-12 form-group">
                                     <label for="password">Kata Sandi</label>
                                     <input type="password" class="form-control" id="password" name="katasandi"
-                                        placeholder="Kata Sandi" required="" onchange="check_pass()"
-                                        onkeypress="return AvoidSpace(event)">
+                                        placeholder="Kata Sandi" required="">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="password">Konfirmasi Kata Sandi</label>
                                     <input type="password" class="form-control" id="confirm_password"
-                                        name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required=""
-                                        onchange="check_pass()" onkeypress="return AvoidSpace(event)">
+                                        name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required="">
                                     <small id="message" class="text-danger"></small>
                                 </div>
                                 <div class="col-md-12 form-group">
@@ -108,7 +110,7 @@ if (isset($_POST['btn-signup'])) {
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12 ">
-                                    <p>Sudah punya akun? <a href="signin" class="txt-default">Klik</a> disini
+                                    <p>Sudah punya akun? Klik disini
                                         untuk&nbsp;<a href="signin" class="txt-default">Masuk</a></p>
                                 </div>
                             </div>

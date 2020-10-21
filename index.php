@@ -96,106 +96,6 @@
     </section>
     <!--slider end-->
 
-    <!--tab product-->
-    <section class="section-pt-space">
-        <div class="tab-product-main">
-            <div class="tab-prodcut-contain">
-                <ul class="tabs tab-title">
-                    <?php
-                    foreach ($category_list_api_data as $listProduct) {
-                        $jumlahProductCategory = $listProduct['count_product'];
-                        if (is_null($jumlahProductCategory)) {
-                        } else {
-                    ?>
-                    <li class="">
-                        <a href="tab-<?= $listProduct['name'] ?>">
-                            <?= $listProduct['name'] ?>
-                        </a>
-                    </li>
-                    <?php
-                        }
-                        ?>
-                    <?php } ?>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--tab product-->
-
-    <!-- product tab  -->
-    <section class="ratio_asos section-big-py-space">
-        <div class="custom-container">
-            <div class="row">
-                <div class="col pr-0">
-                    <div class="theme-tab product no-arrow">
-                        <div class="tab-content-cls ">
-                            <!-- looping tab -->
-                            <?php
-                            //checkpoint untuk memberi class active default tab
-                            $checkPoint = 0;
-                            foreach ($category_list_api_data as $productTabList) {
-                                $dataProductName = $productTabList['name'];
-                                if ($checkPoint == 0) {
-                                    $tabActive = " active default";
-                                } else {
-                                    $tabActive = "";
-                                }
-                                $checkPoint++;
-
-                            ?>
-                            <div id="tab-<?= $dataProductName ?>" class="tab-content <?= $tabActive ?>">
-                                <div class="product-slide-6 product-m no-arrow product">
-                                    <?php
-                                        $tab_product_per_category_api = Requests::post($api_endpoint . "product/category?name=" . $dataProductName, $header);
-                                        $tab_product_status = $tab_product_per_category_api->success;
-                                        $tab_product_data = json_decode($tab_product_per_category_api->body, TRUE);
-                                        $tab_product_data = $tab_product_data['data'];
-                                        foreach ($tab_product_data as $tab_product_data_view) {
-                                            // var_dump($tab_product_data_view);
-                                            $tab_product_data_view_name = $tab_product_data_view['name'];
-                                            $tab_product_data_view_price = "Rp " . number_format($tab_product_data_view['price'], 0, ',', '.');
-                                            $tab_product_data_view_image = $tab_product_data_view['image'];
-                                            if (empty($tab_product_data_view_image)) {
-                                                $tab_product_data_view_image = "./assets/images/layout-4/product/1.jpg";
-                                            } else {
-                                                $tab_product_data_view_image = $tab_product_data_view_image[0]['url'];
-                                            }
-                                        ?>
-                                    <div>
-                                        <a
-                                            href="product-detail?name=<?= $tab_product_data_view_name ?>&target=<?= $tab_product_data_view['id'] ?>">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src=<?= $tab_product_data_view_image ?>
-                                                            class="img-fluid bg-img" alt="product">
-                                                    </div>
-                                                </div>
-                                                <div class="product-detail detail-center1 pt-3">
-                                                    <h4 class="text-success" style="text-decoration: none;">
-                                                        <?= $tab_product_data_view_name ?></h4>
-                                                    <span
-                                                        class="detail-price"><?= $tab_product_data_view_price; ?></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <?php
-                                        }
-                                        ?>
-                                </div>
-                            </div>
-                            <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- product tab end -->
-
     <!--rounded category start-->
     <section class="rounded-category rounded-category-inverse mt-2">
         <div class="container">
@@ -227,6 +127,65 @@
         </div>
     </section>
     <!--rounded category end-->
+
+    <!-- section start -->
+    <section class="section-big-pt-space ratio_square bg-light">
+        <div class="collection-wrapper">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="collection-content col">
+                        <div class="page-main-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="collection-product-wrapper">
+                                        <div class="product-wrapper-grid">
+                                            <div class="row">
+                                                <?php
+                                                $product_category = Requests::post($api_endpoint . "product/limit?limit=18", $header);
+                                                // $product_category_status = $product_category->success;
+                                                $product_category_data = json_decode($product_category->body, TRUE);
+                                                $product_category_data = $product_category_data['data'];
+                                                foreach ($product_category_data as $product_show) {
+                                                    if (empty($product_show['image'][0])) {
+                                                        $product_show_image = "./assets/images/layout-4/product/1.jpg";
+                                                    } else {
+                                                        $product_show_image = $product_show['image'][0]['url'];
+                                                    }
+                                                ?>
+                                                <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-grid-box">
+                                                    <a
+                                                        href="product-detail?name=<?= $product_show['name'] ?>&target=<?= $product_show['id'] ?>">
+                                                        <div class="product">
+                                                            <div class="product-box ">
+                                                                <div class="product-imgbox">
+                                                                    <div class="product-front">
+                                                                        <img src="<?= $product_show_image ?>"
+                                                                            class="img-fluid bg-img" alt="product">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-detail detail-center1 pt-2">
+                                                                    <h6 class="text-secondary font-weight-bold">
+                                                                        <?= $product_show['name'] ?></h6>
+                                                                    <span
+                                                                        class="detail-price text-success"><?= rupiah($product_show['price']) ?></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section End -->
 
     <!--footer-start-->
     <?php include('./template/footer.php') ?>

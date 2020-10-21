@@ -6,7 +6,7 @@
 //jika button signin di tekan
 if (isset($_POST['btn-login'])) {
 
-    $data = array('email' => $_POST['email'], 'password' => $_POST['password'], 'device_id' => "web", 'remember_me' => true);
+    $data = array('email_or_phone' => $_POST['email'], 'password' => $_POST['password'], 'device_id' => "web", 'remember_me' => true);
 
     $signin_api = Requests::post($api_endpoint . "login", $header, json_encode($data));
     $signin_status = $signin_api->success;
@@ -19,9 +19,10 @@ if (isset($_POST['btn-login'])) {
         header("Location: profile");
         exit();
     } else {
-        message_failed("Maaf, data pengguna tidak ditemukan");
-        header("Location: signin");
-        exit();
+        // message_failed("Maaf, data pengguna tidak ditemukan");
+        // header("Location: signin");
+        // exit();
+        var_dump($signin_api_data);
     }
 }
 ?>

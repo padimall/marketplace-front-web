@@ -1,6 +1,6 @@
 <?php
 
-$category_list_api = Requests::post($api_endpoint . "product-category/all/", $header);
+$category_list_api = Requests::post($api_endpoint . "main-category/all/", $header);
 $category_list_api_status = $category_list_api->success;
 $category_list_api_data = json_decode($category_list_api->body, TRUE);
 $category_list_api_data = $category_list_api_data['data'];
@@ -75,8 +75,10 @@ $category_list_api_data = $category_list_api_data['data'];
                                 <?php
                                 foreach ($category_list_api_data as $listProduct) {
                                 ?>
-                                <li><a
-                                        href="product-category?name=<?= $listProduct['name'] ?>"><?= $listProduct['name'] ?></a>
+                                <li>
+                                    <a
+                                        href="product-category?name=<?= $listProduct['name'] ?>&target=<?= $listProduct['id'] ?>">
+                                        <?= $listProduct['name'] ?></a>
                                 </li>
                                 <?php } ?>
                             </ul>
@@ -194,8 +196,11 @@ $category_list_api_data = $category_list_api_data['data'];
                                             <?php
                                             foreach ($category_list_api_data as $listProduct) {
                                             ?>
-                                            <li><a
-                                                    href="product-category?name=<?= $listProduct['name'] ?>"><?= $listProduct['name'] ?></a>
+                                            <li>
+                                                <a
+                                                    href="product-category?name=<?= $listProduct['name'] ?>&target=<?= $listProduct['id'] ?>">
+                                                    <?= $listProduct['name'] ?>
+                                                </a>
                                             </li>
                                             <?php } ?>
                                         </ul>
