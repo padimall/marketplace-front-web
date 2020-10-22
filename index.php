@@ -107,7 +107,8 @@
                         ?>
                         <div>
                             <div class="category-contain">
-                                <a href="product-category?name=<?= $listProduct['name'] ?>">
+                                <a
+                                    href="sub-category?name=<?= $listProduct['name'] ?>&target=<?= $listProduct['id'] ?>">
                                     <div class="img-wrapper">
                                         <img src="<?= $listProduct['image'] ?>" alt="category" class="img-fluid"
                                             style="width:110px; height: 97px">

@@ -19,10 +19,9 @@ if (isset($_POST['btn-login'])) {
         header("Location: profile");
         exit();
     } else {
-        // message_failed("Maaf, data pengguna tidak ditemukan");
-        // header("Location: signin");
-        // exit();
-        var_dump($signin_api_data);
+        message_failed("Maaf, data pengguna tidak ditemukan");
+        header("Location: signin");
+        exit();
     }
 }
 ?>

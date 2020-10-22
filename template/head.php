@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set("Asia/Bangkok");
 include('./vendor/rmccue/requests/library/Requests.php');
-include('./controller/function.php');
-
+include('./controller/General.php');
+error_reporting(1);
 session_start();
 
 Requests::register_autoloader();

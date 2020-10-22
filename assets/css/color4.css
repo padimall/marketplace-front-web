@@ -1059,7 +1059,8 @@ button {
     position: relative;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    color: #444;
+    /* color: #444; */
+    color: white;
     text-transform: uppercase
 }
 

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('template/head.php');
+<?php
+include('template/head.php');
+
 $profile_api = Requests::post($api_endpoint . "user", $header);
 $profile_api_status = $profile_api->success;
 $profile_api_data = json_decode($profile_api->body, TRUE);
@@ -45,25 +47,7 @@ if (isset($_POST['btn-profile'])) {
 }
 
 //check session
-if (isset($_SESSION['bearerKey'])) {
-    if (isset($_SESSION['login-status-expired'])) {
-        $dateExpired = $_SESSION['login-status-expired'];
-        $dateNow = date("Y-m-d h:i:s");
-
-        if ($dateNow > $dateExpired) {
-            unset($_SESSION['bearerKey']);
-            unset($_SESSION['login-status-expired']);
-            header("Location: signup");
-            exit();
-        }
-    }
-} else {
-    unset($_SESSION['bearerKey']);
-    unset($_SESSION['login-status-expired']);
-    header("Location: signup");
-    exit();
-}
-
+checkSessionValid();
 ?>
 
 <body class="bg-light ">
@@ -95,6 +79,7 @@ if (isset($_SESSION['bearerKey'])) {
                             }
                             ?>
                             <h3 class="mb-3">Informasi Akun</h3>
+                            <hr>
 
                             <form class="theme-form" method="POST">
                                 <div class="form-row">

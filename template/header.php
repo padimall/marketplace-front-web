@@ -77,7 +77,7 @@ $category_list_api_data = $category_list_api_data['data'];
                                 ?>
                                 <li>
                                     <a
-                                        href="product-category?name=<?= $listProduct['name'] ?>&target=<?= $listProduct['id'] ?>">
+                                        href="sub-category?name=<?= $listProduct['name'] ?>&target=<?= $listProduct['id'] ?>">
                                         <?= $listProduct['name'] ?></a>
                                 </li>
                                 <?php } ?>
@@ -198,7 +198,7 @@ $category_list_api_data = $category_list_api_data['data'];
                                             ?>
                                             <li>
                                                 <a
-                                                    href="product-category?name=<?= $listProduct['name'] ?>&target=<?= $listProduct['id'] ?>">
+                                                    href="sub-category?name=<?= $listProduct['name'] ?>&target=<?= $listProduct['id'] ?>">
                                                     <?= $listProduct['name'] ?>
                                                 </a>
                                             </li>

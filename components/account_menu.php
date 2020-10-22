@@ -9,7 +9,7 @@
                 <li><a href="profile">Informasi Akun</a></li>
                 <li><a href="#">Pesanan Saya</a></li>
                 <li><a href="#">Riwayat Pembelian</a></li>
-                <li><a href="#">Toko Saya</a></li>
+                <li><a href="my-store">Toko Saya</a></li>
                 <li><a href="change-password">Ubah Kata Sandi</a></li>
                 <li class="last"><a href="signout">Keluar</a></li>
             </ul>

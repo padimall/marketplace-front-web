@@ -46,3 +46,47 @@ function rupiah($string)
 {
     return "Rp " . number_format($string, 0, ',', '.');
 }
+
+function checkIfSupplier($api_endpoint, $header)
+{
+    $checkSupplier = Requests::post($api_endpoint, $header);
+    $checkSupplier = json_decode($checkSupplier->body, TRUE);
+    if ($checkSupplier['status'] == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkAgentOrSupplier($api_endpoint, $header)
+{
+    $check = Requests::post($api_endpoint, $header);
+    $check = json_decode($check->body, TRUE);
+    if ($check['status'] == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkSessionValid()
+{
+    if (isset($_SESSION['bearerKey'])) {
+        if (isset($_SESSION['login-status-expired'])) {
+            $dateExpired = $_SESSION['login-status-expired'];
+            $dateNow = date("Y-m-d h:i:s");
+
+            if ($dateNow > $dateExpired) {
+                unset($_SESSION['bearerKey']);
+                unset($_SESSION['login-status-expired']);
+                header("Location: signup");
+                exit();
+            }
+        }
+    } else {
+        unset($_SESSION['bearerKey']);
+        unset($_SESSION['login-status-expired']);
+        header("Location: signup");
+        exit();
+    }
+}
