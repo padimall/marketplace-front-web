@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <div class="top-category">
                             <div class="row footer-theme">
                                 <div class="col-md-6 col-lg-3">
@@ -119,10 +119,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
-            <div class="sub-footer">
+            <div class="sub-footer mt-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-md-8 col-sm-12">
