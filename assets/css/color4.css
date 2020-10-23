@@ -4128,7 +4128,7 @@ button {
 
 .layout-header4 .contact-block .desc-nav-block i {
     font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
-    color: #84B214;
+    color: #F97C2D;
     -webkit-transform: rotate(-35deg);
     transform: rotate(-35deg)
 }
@@ -4149,7 +4149,7 @@ button {
 }
 
 .layout-header4 .contact-block .desc-nav-block .mobile-user {
-    color: #999;
+    color: #F97C2D;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     margin-left: 40px;
@@ -4220,7 +4220,7 @@ button {
 }
 
 .layout-header4 .icon-block ul .mobile-cart i {
-    color: #84B214;
+    color: #F97C2D;
     font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)))
 }
 
