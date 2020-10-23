@@ -4,7 +4,7 @@
 <?php
 include('template/head.php');
 include('controller/MyStore.php');
-
+searchProduct();
 //check session
 checkSessionValid();
 ?>

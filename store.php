@@ -2,6 +2,8 @@
 <html lang="en">
 
 <?php include('template/head.php');
+searchProduct();
+
 if (isset($_POST['btn-profile'])) {
     $name = $_POST['name'];
     $address = $_POST['address'];

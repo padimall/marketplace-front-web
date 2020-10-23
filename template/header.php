@@ -231,12 +231,13 @@ $category_list_api_data = $category_list_api_data['data'];
                         </div>
                         <div class="category-right">
                             <div class="input-block">
-                                <form class="big-deal-form">
+                                <form class="big-deal-form" method="GET">
                                     <div class="input-group ">
                                         <div class="input-group-prepend">
                                             <span class="search"><i class="fa fa-search"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Search a Product">
+                                        <input type="text" class="form-control" placeholder="Cari produk disini"
+                                            name="search-product">
                                     </div>
                                 </form>
                             </div>

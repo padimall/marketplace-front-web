@@ -90,3 +90,11 @@ function checkSessionValid()
         exit();
     }
 }
+
+function searchProduct()
+{
+    if (isset($_GET['search-product'])) {
+        header("Location: search-product?q=" . htmlentities($_GET['search-product']));
+        exit();
+    }
+}

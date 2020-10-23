@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('template/head.php');
+<?php
+include('template/head.php');
+searchProduct();
 
 //jika button signin di tekan
 if (isset($_POST['btn-login'])) {

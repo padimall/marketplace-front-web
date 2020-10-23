@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('template/head.php');
+<?php
+include('template/head.php');
+searchProduct();
 
 if (isset($_POST['btn-change-password'])) {
     $old_password = $_POST['old_password'];

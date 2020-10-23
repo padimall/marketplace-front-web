@@ -3,6 +3,7 @@
 
 <?php
 include('template/head.php');
+searchProduct();
 
 //buat request untuk ambil data detail product
 $product_detail_request = Requests::post($api_endpoint . "product/detail?target_id=" . $_GET['target'], $header);

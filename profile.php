@@ -3,6 +3,7 @@
 
 <?php
 include('template/head.php');
+searchProduct();
 
 $profile_api = Requests::post($api_endpoint . "user", $header);
 $profile_api_status = $profile_api->success;
