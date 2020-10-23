@@ -148,7 +148,7 @@
             } else {
                 //jika tidak ada sub category di dalamnya
             ?>
-    <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center col-grid-box mt-4">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center col-grid-box mt-4 mb-4">
         <img alt="" class="img-fluid" src="./assets/images/no-product.png">
         <h3 class="mt-3">Maaf, untuk saat ini belum ada produk di kategori ini</h3>
     </div>

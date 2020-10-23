@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('template/head.php');
+<?php
+include('template/head.php');
 
+if (isset($_POST['btn-reset-password'])) {
+    $email = htmlentities($_POST['email']);
+    $password = htmlentities($_POST['password']);
+    $confirm_password = htmlentities($_POST['confirm_password']);
+    $token = htmlentities($_GET['token']);
+
+    if ($password === $confirm_password) {
+        $end_point = "password/reset?token=" . $token . "&email=" . $email . "&password=" . $password . "&password_confirmation=" . $confirm_password;
+
+        $reset_pwd = Requests::post($api_endpoint . $end_point, $header);
+        $reset_pwd_status = $reset_pwd->success;
+        $reset_pwd_data = json_decode($reset_pwd->body, TRUE);
+
+        if ($reset_pwd_status) {
+            message_success("Berhasil memperbaharui kata sandi anda");
+            header("Location: signin");
+            exit();
+        } else {
+            //gagal
+        }
+    } else {
+        message_failed("Mohon periksa kembali inputan anda");
+    }
+}
 
 ?>
 
@@ -35,22 +60,23 @@
                                 <div class="col-md-12 form-group">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                        required="" onkeypress="return AvoidSpace(event)">
+                                        required="" value="<?= $_GET['email'] ?>" onkeypress="return AvoidSpace(event)"
+                                        readonly>
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="password">Kata Sandi</label>
-                                    <input type="password" class="form-control" id="password" name="katasandi"
+                                    <input type="password" class="form-control" id="password" name="password"
                                         placeholder="Kata Sandi" required="">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="password">Konfirmasi Kata Sandi</label>
                                     <input type="password" class="form-control" id="confirm_password"
-                                        name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required=""
+                                        name="confirm_password" placeholder="Konfirmasi Kata Sandi" required=""
                                         onchange="check_pass()">
                                     <small id="message" class="text-danger"></small>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <button name="btn-signup" class="btn btn-normal btn-block rounded"
+                                    <button name="btn-reset-password" class="btn btn-normal btn-block rounded"
                                         id="btnSign">Perbaharui Sandi</button>
                                 </div>
                             </div>
