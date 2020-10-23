@@ -61,7 +61,7 @@ if (isset($_POST['btn-login'])) {
                                     placeholder="Masukkan kata sandi" required="" onkeypress="return AvoidSpace(event)">
                             </div>
                             <button name="btn-login" class="btn btn-normal">Masuk</button>
-                            <a class="float-right txt-default mt-2" href="#">Lupa Kata Sandi</a>
+                            <a class="float-right txt-default mt-2" href="forget-password">Lupa Kata Sandi</a>
                         </form>
                         <div class="mt-2">
                             Belum punya akun? <a href="signup" class="txt-default pt-3">Buat Sekarang</a>

@@ -19,7 +19,7 @@
     ?>
     <!--header end-->
 
-    <!--box categroy start-->
+    <!--box category start-->
     <section class="box-category section-pt-space">
         <div class="container-fluid ">
             <div class="row">
@@ -30,17 +30,16 @@
                         $sub_category_product = Requests::post($api_endpoint . "product-category/all", $header);
                         $sub_category_product_status = $sub_category_product->success;
                         $sub_category_product_data = json_decode($sub_category_product->body, TRUE);
-
                         $sub_category_product_data = $sub_category_product_data['data'];
 
                         //untuk menampung array yang akan di looping di show product dibawah
                         $array_sub_category = [];
+                        $array_sub_category_empty = [];
 
                         foreach ($sub_category_product_data as $show_sub_category) {
                             //hanya tampilkan yang sesuai dengan main category id
                             if ($show_sub_category['main_category_id'] == $main_category_id) {
                                 array_push($array_sub_category, $show_sub_category['id']);
-
                         ?>
                         <div>
                             <a href="product-category?name=<?= $show_sub_category['name'] ?>">
@@ -49,10 +48,13 @@
                                     <h4>
                                         <?= $show_sub_category['name'] ?>
                                     </h4>
+
                                 </div>
                             </a>
                         </div>
-                        <?php }
+                        <?php } else {
+                                array_push($array_sub_category_empty, null);
+                            }
                         }
                         ?>
                     </div>
@@ -62,7 +64,7 @@
     </section>
     <!--box category end-->
 
-    <!-- section start -->
+    <!-- product list start -->
     <section class="section-big-pt-space ratio_square bg-light">
         <div class="collection-wrapper">
             <div class="custom-container">
@@ -129,12 +131,8 @@
             </div>
         </div>
     </section>
-    <!-- section End -->
+    <!-- productlist End -->
 
-    <?php
-    // echo 223;
-    // var_dump($array_sub_category);
-    ?>
     <!--footer-start-->
     <?php include('./template/footer.php') ?>
     <!--footer-end-->
