@@ -100,7 +100,8 @@ if (isset($_POST['btn-signup'])) {
                                 <div class="col-md-12 form-group">
                                     <label for="password">Konfirmasi Kata Sandi</label>
                                     <input type="password" class="form-control" id="confirm_password"
-                                        name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required="">
+                                        name="katasandi_konfirmasi" placeholder="Konfirmasi Kata Sandi" required=""
+                                        onchange="check_pass()">
                                     <small id="message" class="text-danger"></small>
                                 </div>
                                 <div class="col-md-12 form-group">
