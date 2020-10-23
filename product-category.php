@@ -20,7 +20,7 @@
     <!--header end-->
 
     <!-- section start -->
-    <section class="section-big-pt-space ratio_asos bg-light">
+    <section class="section-big-pt-space ratio_square bg-light">
         <div class="collection-wrapper">
             <div class="custom-container">
                 <div class="row">
@@ -51,21 +51,27 @@
                                                         }
                                                 ?>
                                                 <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-grid-box">
-                                                    <div class="product">
-                                                        <div class="product-box ">
-                                                            <div class="product-imgbox">
-                                                                <div class="product-front">
-                                                                    <img src="<?= $product_category_show_image ?>"
-                                                                        class="img-fluid bg-img" alt="product">
+                                                    <a
+                                                        href="product-detail?name=<?= $product_category_show['name'] ?>&target=<?= $product_category_show['id'] ?>">
+                                                        <div class="product">
+                                                            <div class="product-box ">
+                                                                <div class="product-imgbox">
+                                                                    <div class="product-front">
+                                                                        <img src="<?= $product_category_show_image ?>"
+                                                                            class="img-fluid bg-img" alt="product">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-detail detail-center1 pt-2">
+                                                                    <h6 class="text-secondary font-weight-bold">
+                                                                        <?= $product_category_show['name'] ?>
+                                                                    </h6>
+                                                                    <span
+                                                                        class="detail-price text-success"><?= $product_category_show_price ?>
+                                                                    </span>
                                                                 </div>
                                                             </div>
-                                                            <div class="product-detail detail-center1 pt-2">
-                                                                <h6><?= $product_category_show['name'] ?></h6>
-                                                                <span
-                                                                    class="detail-price"><?= $product_category_show_price ?></span>
-                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </div>
                                                 <?php
                                                     }

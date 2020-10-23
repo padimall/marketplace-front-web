@@ -32,19 +32,29 @@
                         $sub_category_product_data = json_decode($sub_category_product->body, TRUE);
 
                         $sub_category_product_data = $sub_category_product_data['data'];
+
+                        //untuk menampung array yang akan di looping di show product dibawah
+                        $array_sub_category = [];
+
                         foreach ($sub_category_product_data as $show_sub_category) {
+                            //hanya tampilkan yang sesuai dengan main category id
                             if ($show_sub_category['main_category_id'] == $main_category_id) {
+                                array_push($array_sub_category, $show_sub_category['id']);
+
                         ?>
                         <div>
                             <a href="product-category?name=<?= $show_sub_category['name'] ?>">
                                 <div class="box-category-contain rounded"
-                                    style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<?= $show_sub_category['image'] ?>');">
-                                    <h4><?= $show_sub_category['name'] ?></h4>
+                                    style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<?= $show_sub_category['image'] ?>');background-size:cover;background-repeat: no-repeat">
+                                    <h4>
+                                        <?= $show_sub_category['name'] ?>
+                                    </h4>
                                 </div>
                             </a>
                         </div>
                         <?php }
-                        } ?>
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -52,6 +62,79 @@
     </section>
     <!--box category end-->
 
+    <!-- section start -->
+    <section class="section-big-pt-space ratio_square bg-light">
+        <div class="collection-wrapper">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="collection-content col">
+                        <div class="page-main-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="collection-product-wrapper">
+                                        <div class="product-wrapper-grid mb-4">
+                                            <div class="row">
+                                                <?php
+                                                //array push yang sudah ditampung diatas, jadi acuan untuk looping product yang dibawah
+                                                foreach ($array_sub_category as $sub_category_id) {
+                                                    $product_category = Requests::post($api_endpoint . "product/all", $header);
+                                                    $product_category = json_decode($product_category->body, TRUE);
+                                                    $product_category = $product_category['data'];
+
+                                                    foreach ($product_category as $show_product_category) {
+                                                        $category = $show_product_category['category'];
+                                                        if ($sub_category_id == $category) {
+                                                            if (empty($show_product_category['image'])) {
+                                                                $show_product_category_image = "./assets/images/layout-4/product/1.jpg";
+                                                            } else {
+                                                                $show_product_category_image = $show_product_category['image'][0]['url'];
+                                                            }
+                                                ?>
+                                                <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-grid-box">
+                                                    <a
+                                                        href="product-detail?name=<?= $show_product_category['name'] ?>&target=<?= $show_product_category['id'] ?>">
+                                                        <div class="product">
+                                                            <div class="product-box ">
+                                                                <div class="product-imgbox">
+                                                                    <div class="product-front">
+                                                                        <img src="<?= $show_product_category_image ?>"
+                                                                            class="img-fluid bg-img" alt="product">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-detail detail-center1 pt-2">
+                                                                    <h6 class="text-secondary font-weight-bold">
+                                                                        <?= $show_product_category['name'] ?>
+                                                                    </h6>
+                                                                    <span
+                                                                        class="detail-price text-success"><?= rupiah($show_product_category['price']) ?>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <?php
+                                                        }
+                                                    }
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section End -->
+
+    <?php
+    // echo 223;
+    // var_dump($array_sub_category);
+    ?>
     <!--footer-start-->
     <?php include('./template/footer.php') ?>
     <!--footer-end-->

@@ -11,7 +11,7 @@ $product_detail_data = json_decode($product_detail_request->body, TRUE);
 $product_detail_data = $product_detail_data['data'];
 
 $product_detail_name = $product_detail_data['name'];
-$product_detail_price = rupiah($product_detail_data);
+$product_detail_price = rupiah($product_detail_data['price']);
 $product_detail_description = $product_detail_data['description'];
 $product_detail_weight = $product_detail_data['weight'];
 $product_detail_stock = $product_detail_data['stock'];
