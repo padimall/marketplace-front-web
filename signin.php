@@ -54,8 +54,9 @@ if (isset($_POST['btn-login'])) {
                         ?>
                         <form class="theme-form" method="POST">
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email" required="">
+                                <label for="email">Email / No HP</label>
+                                <input type="text" name="email" class="form-control" placeholder="Email atau No HP"
+                                    required="">
                             </div>
                             <div class="form-group">
                                 <label for="review">Kata Sandi</label>
@@ -63,7 +64,7 @@ if (isset($_POST['btn-login'])) {
                                     placeholder="Masukkan kata sandi" required="" onkeypress="return AvoidSpace(event)">
                             </div>
                             <button name="btn-login" class="btn btn-normal">Masuk</button>
-                            <a class="float-right txt-default mt-2" href="forget-password">Lupa Kata Sandi</a>
+                            <a class="float-right text-secondary mt-2" href="forget-password">Lupa Kata Sandi</a>
                         </form>
                         <div class="mt-2">
                             Belum punya akun? <a href="signup" class="txt-default pt-3">Buat Sekarang</a>
