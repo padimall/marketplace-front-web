@@ -1,11 +1,12 @@
 <?php
-
-$check_agent = Requests::post($api_endpoint . "agent/detail", $header);
+$data_agent = Requests::post($api_endpoint . "agent/detail", $header);
 // $register_agent_status = $register_agent->success;
-$check_agent_data = json_decode($check_agent->body, TRUE);
+
+$data_agent = json_decode($data_agent->body, TRUE);
+$data_agent = $data_agent['data'];
 
 //check apakah agent sudah diverif atau tidak
-$agent_status = $check_agent_data['data']['status'];
+$agent_status = $data_agent['status'];
 
 if ($agent_status == 0) {
 ?>
@@ -14,8 +15,6 @@ if ($agent_status == 0) {
     <h3 class="pt-2 text-secondary" style="color: #353535">Registrasi Agen anda sedang diproses, mohon menunggu</h3>
 </div>
 <?php
-} else {
-?>
-asdasd
-<?php
+} elseif ($agent_status == 1) {
+    include("beranda.php");
 }

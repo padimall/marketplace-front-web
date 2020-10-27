@@ -3,6 +3,8 @@
 
 <?php
 include('template/head.php');
+
+//semua aksi ada disini
 include('controller/MyStore.php');
 searchProduct();
 //check session
@@ -36,28 +38,29 @@ checkSessionValid();
                             <?php
                             if (!checkAgentOrSupplier($api_endpoint . "agent/detail", $header) && !checkAgentOrSupplier($api_endpoint . "supplier/detail", $header)) {
                                 //bukan agent & bukan supplier
-                                echo '
-                                <div class="text-center">
-                                    <img alt="" class="img-fluid" src="./assets/images/business.png" style="width:70%">
-                                    <h3 class="pt-2 text-secondary" style="color: #353535">Ayo, mari bergabung dengan PadiMall</h3>
-                                    <div class="pt-2">
-                                        <a href="?register-supplier" class="btn btn-success">Jadi Supplier</a>
-                                        <a href="?register-agent" class="btn btn-outline-info">Jadi Agent</a>
-                                    </div>
-                                </div>';
+
+                                if (isset($_GET['register-supplier'])) {
+                                    //daftar supplier
+                                    include('components/my-store/supplier/register.php');
+                                } elseif (isset($_GET['register-agent'])) {
+                                    include("components/my-store/agent/register.php");
+                                } else {
+                                    echo '
+                                    <div class="text-center">
+                                        <img alt="" class="img-fluid" src="./assets/images/business.png" style="width:70%">
+                                        <h3 class="pt-2 text-secondary" style="color: #353535">Ayo, mari bergabung dengan PadiMall</h3>
+                                        <div class="pt-2">
+                                            <a href="?register-supplier" class="btn btn-success">Jadi Supplier</a>
+                                            <a href="?register-agent" class="btn btn-outline-info">Jadi Agent</a>
+                                        </div>
+                                    </div>';
+                                }
                             } elseif (checkAgentOrSupplier($api_endpoint . "supplier/detail", $header)) {
                                 //supplier
                                 include("components/my-store/supplier/index.php");
                             } elseif (checkAgentOrSupplier($api_endpoint . "agent/detail", $header)) {
                                 //agent
                                 include("components/my-store/agent/index.php");
-                            } else {
-                                if (isset($_GET['register-supplier'])) {
-                                    //daftar supplier
-                                    include('components/my-store/supplier/register.php');
-                                } elseif (isset($_GET['register-agent'])) {
-                                    include("components/my-store/agent/register.php");
-                                }
                             }
                             ?>
                         </div>
