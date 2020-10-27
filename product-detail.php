@@ -96,9 +96,10 @@ $product_detail_image = $product_detail_data['image'];
                             <h2><?= $product_detail_name ?></h2>
                             <h3><?= $product_detail_price ?></h3>
                             <div class="product-buttons">
-                                <a href="#" data-toggle="modal" data-target="#addtocart" class="btn btn-normal">Tambah
+                                <a href="#" data-toggle="modal" data-target="#addtocart"
+                                    class="btn btn-normal rounded">Tambah
                                     ke Keranjang</a>
-                                <a href="#" class="btn btn-normal">Beli Sekarang</a>
+                                <a href="#" class="btn btn-normal btn-outline rounded">Beli Sekarang</a>
                             </div>
                             <div class="border-product">
                                 <h6 class="product-title">Deskripsi Produk</h6>
