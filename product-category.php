@@ -66,7 +66,7 @@ searchProduct();
                                                                 </div>
                                                                 <div class="product-detail detail-center1 pt-2">
                                                                     <h6 class="text-secondary font-weight-bold">
-                                                                        <?= $product_category_show['name'] ?>
+                                                                        <?= limit_string($product_category_show['name'], 15) ?>
                                                                     </h6>
                                                                     <span
                                                                         class="detail-price text-success"><?= $product_category_show_price ?>

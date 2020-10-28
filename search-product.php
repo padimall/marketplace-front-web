@@ -63,7 +63,7 @@ searchProduct();
                                                                 </div>
                                                                 <div class="product-detail detail-center1 pt-2">
                                                                     <h6 class="text-secondary font-weight-bold">
-                                                                        <?= $sp['name'] ?>
+                                                                        <?= limit_string($sp['name'], 15) ?>
                                                                     </h6>
                                                                     <span
                                                                         class="detail-price text-success"><?= rupiah($sp['price']) ?>
