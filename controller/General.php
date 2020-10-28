@@ -108,3 +108,13 @@ function searchProduct()
         exit();
     }
 }
+
+function limit_string($string, $length)
+{
+    if (strlen($string) <= $length) {
+        return $string;
+    } else {
+        $y = substr($string, 0, $length) . '...';
+        return $y;
+    }
+}

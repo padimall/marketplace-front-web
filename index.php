@@ -96,7 +96,8 @@ searchProduct();
                                                                 </div>
                                                                 <div class="product-detail detail-center1 pt-2">
                                                                     <h6 class="text-secondary font-weight-bold">
-                                                                        <?= $product_show['name'] ?></h6>
+                                                                        <?= limit_string($product_show['name'], 15) ?>
+                                                                    </h6>
                                                                     <span
                                                                         class="detail-price text-success"><?= rupiah($product_show['price']) ?></span>
                                                                 </div>
