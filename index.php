@@ -23,72 +23,29 @@ searchProduct();
     <!--header end-->
 
     <!--slider start-->
-    <section class="theme-slider section-py-space">
+    <section class="theme-slider section-big-py-space bg-light">
         <div class="custom-container">
-            <div class="row slider-layout">
-                <div class="col-12 slider-slide ">
+            <div class="row">
+                <div class="col">
                     <div class="slide-1 no-arrow">
                         <div>
-                            <div class="slider-banner slide-banner-3">
+                            <div class="slider-banner p-center slide-banner-1">
                                 <div class="slider-img">
-                                    <ul class="layout4-slide-1">
-                                        <li id="img-1"><img src="./assets/images/layout-4/slider/1.1.png"
-                                                class="img-fluid" alt="slider"></li>
-                                    </ul>
-                                </div>
-                                <div class="slider-banner-contain">
-                                    <div>
-                                        <h5>last chance to Grab</h5>
-                                        <h3>headphones</h3>
-                                        <h1>new earphones</h1>
-                                        <h2>wireless headphone only $99</h2>
-                                        <a class="btn btn-normal">
-                                            shop now
-                                        </a>
-                                    </div>
+                                    <img src="./assets/images/slider/slider-1.png" class=" bg-img" alt="slider">
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div class="slider-banner slide-banner-3">
+                            <div class="slider-banner p-center slide-banner-1">
                                 <div class="slider-img">
-                                    <ul class="layout4-slide-2">
-                                        <li id="img-2"><img src="./assets/images/layout-4/slider/1.2.png"
-                                                class="img-fluid" alt="slider"></li>
-                                    </ul>
-                                </div>
-                                <div class="slider-banner-contain">
-                                    <div>
-                                        <h5>exclusive launch offer</h5>
-                                        <h3>new range off</h3>
-                                        <h1>philips headephone</h1>
-                                        <h2>with rich bass</h2>
-                                        <a class="btn btn-normal">
-                                            shop now
-                                        </a>
-                                    </div>
+                                    <img src="./assets/images/slider/slider-2.png" class=" bg-img" alt="slider">
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div class="slider-banner slide-banner-3">
+                            <div class="slider-banner p-center slide-banner-1">
                                 <div class="slider-img">
-                                    <ul class="layout4-slide-3 ">
-                                        <li id="img-3" class="slide-center"><img
-                                                src="./assets/images/layout-4/slider/1.3.png" class="img-fluid"
-                                                alt="slider"></li>
-                                    </ul>
-                                </div>
-                                <div class="slider-banner-contain">
-                                    <div>
-                                        <h5>providing customized</h5>
-                                        <h3>samsung CCTV</h3>
-                                        <h1>full hd solution</h1>
-                                        <h2>strength your sequrity</h2>
-                                        <a class="btn btn-normal">
-                                            shop now
-                                        </a>
-                                    </div>
+                                    <img src="./assets/images/slider/slider-3.png" class=" bg-img" alt="slider">
                                 </div>
                             </div>
                         </div>

@@ -11,12 +11,22 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-title">
-                    <h3>Informasi Profil</h3>
+                    <h3>Informasi dan Data Toko</h3>
                     <a href="?edit-profile">Ubah</a>
                 </div>
                 <div class="box-content">
                     <h6><?= $data_agent['name'] ?></h6>
                     <h6><?= $data_agent['phone'] ?></h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="box">
+                <div class="box-title">
+                    <h3>Daftar Supplier Anda</h3><a href="#">Lihat Daftar</a>
+                </div>
+                <div class="box-content">
+                    <p>Lihat dan atur Supplier Anda</p>
                 </div>
             </div>
         </div>
