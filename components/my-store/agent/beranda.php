@@ -1,19 +1,19 @@
 <div class="mb-3">
     <span class="badge badge-primary p-1">
-        <a href="" class="text-white">Produk Anda</a>
+        <a href="#" class="text-white">Produk Anda</a>
     </span>
     <span class="badge badge-info p-1">
-        <a href="" class="text-white">Produk Supplier</a>
+        <a href="#" class="text-white">Produk Supplier</a>
     </span>
     <span class="badge badge-dark p-1">
-        <a href="" class="text-white">Riwayat Penjualan</a>
+        <a href="#" class="text-white">Riwayat Penjualan</a>
     </span>
     <span class="badge badge-success p-1">
-        <a href="" class="text-white">Tambah Produk</a>
+        <a href="#" class="text-white">Tambah Produk</a>
     </span>
 </div>
 <div class="welcome-msg">
-    <p class="mb-1">Selamat datang, <b><?= $data_agent['name'] ?></b> [Kode Agent :
+    <p class="mb-1">Selamat datang, <b><?= $data_agent['name'] ?></b> [Kode Agen :
         <b><?= $data_agent['agent_code'] ?></b>]
     </p>
     <p class="text-justify">Berikut adalah tampilan dashboard utama toko anda. Anda dapat mengubah profil, menambahkan
@@ -25,7 +25,8 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-title">
-                    <h3>Informasi Profil</h3><a href="#">Ubah</a>
+                    <h3>Informasi Profil</h3>
+                    <a href="?edit-profile">Ubah</a>
                 </div>
                 <div class="box-content">
                     <h6><?= $data_agent['name'] ?></h6>

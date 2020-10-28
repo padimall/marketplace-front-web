@@ -33,6 +33,7 @@ checkSessionValid();
                 <div class="col-lg-9">
                     <div class="dashboard-right">
                         <div class="dashboard">
+                            <?php message_check() ?>
                             <h3 class="mb-3">Toko Saya</h3>
                             <hr>
                             <?php
@@ -41,8 +42,9 @@ checkSessionValid();
 
                                 if (isset($_GET['register-supplier'])) {
                                     //daftar supplier
-                                    include('components/my-store/supplier/register.php');
+                                    include("components/my-store/supplier/register.php");
                                 } elseif (isset($_GET['register-agent'])) {
+                                    //daftar agent
                                     include("components/my-store/agent/register.php");
                                 } else {
                                     echo '

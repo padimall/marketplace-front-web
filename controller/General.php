@@ -42,6 +42,16 @@ function message_check()
     }
 }
 
+function message_badge_success($message)
+{
+    $_SESSION['message'] = '<span class="float-right badge badge-success p-1 mt-1">' . $message . '</span>';
+}
+
+function message_badge_failed($message)
+{
+    $_SESSION['message'] = '<span class="float-right badge badge-danger p-1 mt-1">' . $message . '</span>';
+}
+
 function rupiah($string)
 {
     return "Rp " . number_format($string, 0, ',', '.');

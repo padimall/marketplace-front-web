@@ -16,5 +16,9 @@ if ($agent_status == 0) {
 </div>
 <?php
 } elseif ($agent_status == 1) {
-    include("beranda.php");
+    if (isset($_GET['edit-profile'])) {
+        include("edit_profile.php");
+    } else {
+        include("beranda.php");
+    }
 }
