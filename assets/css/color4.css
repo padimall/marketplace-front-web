@@ -4037,7 +4037,7 @@ button {
 }
 
 .layout-header4 {
-    padding: 15px 0;
+    padding: 40px 0;
     background-color: #fff
 }
 
@@ -19401,7 +19401,7 @@ body.rtl {
     }
 
     .layout-header4 {
-        padding: 0
+        padding: 15
     }
 
     .layout-header4 .contact-block .sm-nav-block {
@@ -19461,7 +19461,7 @@ body.rtl {
 
     .layout-header4 .logo-block img {
         height: auto;
-        min-width: 110px
+        min-width: 150px
     }
 
     .category-header-4 {
@@ -21506,7 +21506,7 @@ body.rtl {
     .top-header .top-header-left {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center
+        justify-content: left
     }
 
     .top-header .top-header-right {
