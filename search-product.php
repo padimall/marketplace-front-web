@@ -45,7 +45,7 @@ searchProduct();
                                                         foreach ($search_product_data as $sp) {
                                                             $sp_image = $sp['image'];
                                                             if (empty($sp_image)) {
-                                                                $sp_image = "./assets/images/layout-4/product/1.jpg";
+                                                                $sp_image = "./assets/images/no-picture.jpg";
                                                             } else {
                                                                 $sp_image = $sp_image[0]['url'];
                                                             }

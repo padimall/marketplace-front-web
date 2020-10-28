@@ -48,8 +48,7 @@ $product_detail_image = $product_detail_data['image'];
                     <div class="col-lg-4">
                         <div class="product-slick no-arrow">
                             <div>
-                                <img src="./assets/images/layout-4/product/1.jpg" alt=""
-                                    class="img-fluid image_zoom_cls-0">
+                                <img src="./assets/images/no-picture.jpg" alt="" class="img-fluid image_zoom_cls-0">
                             </div>
                         </div>
                     </div>

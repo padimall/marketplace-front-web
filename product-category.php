@@ -48,7 +48,7 @@ searchProduct();
                                                         //check if image exists
                                                         $product_category_show_image = $product_category_show['image'];
                                                         if (empty($product_category_show_image)) {
-                                                            $product_category_show_image = "./assets/images/layout-4/product/1.jpg";
+                                                            $product_category_show_image = "./assets/images/no-picture.jpg";
                                                         } else {
                                                             $product_category_show_image = $product_category_show_image[0]['url'];
                                                         }

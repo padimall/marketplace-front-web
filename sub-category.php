@@ -101,7 +101,7 @@ searchProduct();
                                                                     $category = $show_product_category['category'];
                                                                     if ($sub_category_id == $category) {
                                                                         if (empty($show_product_category['image'])) {
-                                                                            $show_product_category_image = "./assets/images/layout-4/product/1.jpg";
+                                                                            $show_product_category_image = "./assets/images/no-picture.jpg";
                                                                         } else {
                                                                             $show_product_category_image = $show_product_category['image'][0]['url'];
                                                                         }
