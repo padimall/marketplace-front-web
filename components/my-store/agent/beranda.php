@@ -1,17 +1,3 @@
-<div class="mb-3">
-    <span class="badge badge-primary p-1">
-        <a href="#" class="text-white">Produk Anda</a>
-    </span>
-    <span class="badge badge-info p-1">
-        <a href="#" class="text-white">Produk Supplier</a>
-    </span>
-    <span class="badge badge-dark p-1">
-        <a href="#" class="text-white">Riwayat Penjualan</a>
-    </span>
-    <span class="badge badge-success p-1">
-        <a href="#" class="text-white">Tambah Produk</a>
-    </span>
-</div>
 <div class="welcome-msg">
     <p class="mb-1">Selamat datang, <b><?= $data_agent['name'] ?></b> [Kode Agen :
         <b><?= $data_agent['agent_code'] ?></b>]
@@ -37,27 +23,30 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-title">
-                    <h3>Newsletters</h3><a href="#">Edit</a>
+                    <h3>Produk Anda</h3><a href="#">Lihat Daftar</a>
                 </div>
                 <div class="box-content">
-                    <p>You are currently not subscribed to any newsletter.</p>
+                    <p>Lihat dan atur semua Produk Anda</p>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <div class="box">
-            <div class="box-title">
-                <h3>Address Book</h3><a href="#">Manage Addresses</a>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h6>Default Billing Address</h6>
-                    <address>You have not set a default billing address.<br><a href="#">Edit Address</a></address>
+        <div class="col-sm-6">
+            <div class="box">
+                <div class="box-title">
+                    <h3>Produk Supplier Anda</h3><a href="#">Lihat Daftar</a>
                 </div>
-                <div class="col-sm-6">
-                    <h6>Default Shipping Address</h6>
-                    <address>You have not set a default shipping address.<br><a href="#">Edit Address</a></address>
+                <div class="box-content">
+                    <p>Lihat semua produk dari Supplier Anda</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="box">
+                <div class="box-title">
+                    <h3>Riwayat Penjualan</h3><a href="#">Lihat Riwayat</a>
+                </div>
+                <div class="box-content">
+                    <p>Lihat data riwayat penjualan Anda</p>
                 </div>
             </div>
         </div>
