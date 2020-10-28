@@ -11,7 +11,7 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-title">
-                    <h3>Informasi dan Data Toko</h3>
+                    <h3>Informasi Toko</h3>
                     <a href="?edit-profile">Ubah</a>
                 </div>
                 <div class="box-content">
@@ -23,7 +23,8 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-title">
-                    <h3>Daftar Supplier Anda</h3><a href="#">Lihat Daftar</a>
+                    <h3>Daftar Supplier Anda</h3>
+                    <a href="?supplier-list">Lihat Daftar</a>
                 </div>
                 <div class="box-content">
                     <p>Lihat dan atur Supplier Anda</p>

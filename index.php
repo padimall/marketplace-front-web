@@ -22,39 +22,9 @@ searchProduct();
     ?>
     <!--header end-->
 
-    <!--slider start-->
-    <section class="theme-slider section-big-py-space bg-light">
-        <div class="custom-container">
-            <div class="row">
-                <div class="col">
-                    <div class="slide-1 no-arrow">
-                        <div>
-                            <div class="slider-banner p-center slide-banner-1">
-                                <div class="slider-img">
-                                    <img src="./assets/images/slider/slider-1.png" class=" bg-img" alt="slider">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="slider-banner p-center slide-banner-1">
-                                <div class="slider-img">
-                                    <img src="./assets/images/slider/slider-2.png" class=" bg-img" alt="slider">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="slider-banner p-center slide-banner-1">
-                                <div class="slider-img">
-                                    <img src="./assets/images/slider/slider-3.png" class=" bg-img" alt="slider">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--slider end-->
+    <!--slider banner start-->
+    <?php include("components/banner-slider.php") ?>
+    <!--slider banner end-->
 
     <!--rounded category start-->
     <section class="rounded-category rounded-category-inverse mt-2">
