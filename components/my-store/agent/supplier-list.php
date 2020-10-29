@@ -2,7 +2,7 @@
     <h5 class="text-left mb-3" style="color: #272727;">Daftar Supplier</h5>
     <div class="row">
         <div class="col-md-12 table-responsive">
-            <table class="table table-border-radius" id="example">
+            <table class="table table-border-radius" id="agent-supplier-list">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -31,9 +31,3 @@
         </div>
     </div>
 </div>
-
-<script>
-$(document).ready(function() {
-    $('#example').DataTable();
-});
-</script>

@@ -51,11 +51,10 @@ $header = array(
     <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
     <!-- Bootstrap css -->
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.22/datatables.min.css" />
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="./assets/css/color4.css" media="screen" id="color">
-
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.22/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <!-- Sistem Pintar is here -->
 </head>
