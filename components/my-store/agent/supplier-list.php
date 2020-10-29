@@ -1,33 +1,44 @@
 <div class="box-account box-info">
     <h5 class="text-left mb-3" style="color: #272727;">Daftar Supplier</h5>
-    <div class="row">
-        <div class="col-md-12 table-responsive">
-            <table class="table table-hover" id="agent-supplier-list">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>NIB</th>
-                        <th>Alamat</th>
-                        <th>No HP</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $data_agent_supplier = $data_agent['supplier'];
-                    $no = 1;
-                    foreach ($data_agent_supplier as $das) {
-                    ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $das['name'] ?></td>
-                        <td><?= $das['nib'] ?></td>
-                        <td><?= $das['address'] ?></td>
-                        <td><?= $das['phone'] ?></td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+    <section class="search-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <form class="form-header">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cari supplier">
+                            <div class="input-group-append">
+                                <button class="btn btn-normal">
+                                    <i class="fa fa-search"></i>Cari</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+    </section>
+    <div class="row review-block mt-4">
+        <?php
+        $data_agent_supplier = $data_agent['supplier'];
+        foreach ($data_agent_supplier as $das) {
+            if (is_null($das['image'])) {
+                $das_image = "./assets/images/no-picture.jpg";
+            } else {
+                $das_image = $das['image'];
+            }
+        ?>
+        <div class="col-md-3 col-lg-3">
+            <div class="review-box" style="border-radius: 15px;">
+                <img class="img-fluid" src="<?= $das_image ?>" alt="review">
+                <h5><?= $das['name'] ?></h5>
+                <div class="review-message mt-2">
+                    <p>
+                        <?= $das['phone'] ?>
+                    </p>
+                    <a href="" class="btn btn-sm btn btn-outline-success mt-2">Produk</a>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
     </div>
 </div>

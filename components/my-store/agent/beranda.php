@@ -44,16 +44,6 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-title">
-                    <h3>Produk Supplier Anda</h3><a href="#">Lihat Daftar</a>
-                </div>
-                <div class="box-content">
-                    <p>Lihat semua produk dari Supplier Anda</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="box">
-                <div class="box-title">
                     <h3>Riwayat Penjualan</h3><a href="#">Lihat Riwayat</a>
                 </div>
                 <div class="box-content">
