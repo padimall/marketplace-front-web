@@ -1,6 +1,9 @@
     <!-- latest jquery-->
     <script src="./assets/js/jquery-3.3.1.min.js"></script>
 
+    <!-- datatables-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.22/datatables.min.js"></script>
+
     <!-- slick js-->
     <script src="./assets/js/slick.js"></script>
 
