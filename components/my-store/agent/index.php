@@ -22,6 +22,8 @@ if ($agent_status == 0) {
         include("edit_profile.php");
     } elseif (isset($_GET['supplier-list'])) {
         include("supplier-list.php");
+    } elseif (isset($_GET['supplier-detail'])) {
+        include("supplier-detail.php");
     } else {
         include("beranda.php");
     }

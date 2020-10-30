@@ -35,7 +35,8 @@
                     <p>
                         <?= $das['phone'] ?>
                     </p>
-                    <a href="" class="btn btn-sm btn btn-outline-success mt-2">Produk</a>
+                    <a href="?supplier-detail&target=<?= $das['id'] ?>"
+                        class="btn btn-sm btn btn-outline-success mt-2">Produk</a>
                 </div>
             </div>
         </div>
