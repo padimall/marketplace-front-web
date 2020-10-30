@@ -46,7 +46,7 @@ if ($product_supplier['status'] != 1) {
             ?>
 
         <div class="col-md-4 col-lg-4 col-sm-12">
-            <a href="supplier-product-detail?target=<?= $psd['id'] ?>">
+            <a href="?supplier-product-detail&target=<?= $psd['id'] ?>">
                 <div class="card" style="border-radius: 25px;">
                     <img class="card-img-top" src="<?= $psd_image ?>" alt="<?= $psd['name'] ?>"
                         style="border-radius: 25px 25px 0px 0px">
