@@ -25577,3 +25577,14 @@ body.dark {
         border-bottom-color: #3c3c3c
     }
 }
+
+.btn-theme-green{
+    background-color: #84B214;
+    color : white;
+    text-decoration: none;
+}
+
+.btn-theme-green:hover{ 
+    background-color: #F97C2D;
+    color : white !important;
+}
