@@ -70,7 +70,7 @@ searchProduct();
                                 <div class="col-sm-12">
                                     <div class="collection-product-wrapper">
                                         <div class="product-wrapper-grid">
-                                            <div class="row">
+                                            <div class="row mb-5">
                                                 <?php
                                                 $product_category = Requests::post($api_endpoint . "product/limit?limit=18", $header);
                                                 // $product_category_status = $product_category->success;
@@ -88,13 +88,15 @@ searchProduct();
                                                         href="product-detail?name=<?= $product_show['name'] ?>&target=<?= $product_show['id'] ?>">
                                                         <div class="product">
                                                             <div class="product-box ">
-                                                                <div class="product-imgbox">
+                                                                <div class="product-imgbox"
+                                                                    style="border-radius: 10px 10px 0px 0px">
                                                                     <div class="product-front">
                                                                         <img src="<?= $product_show_image ?>"
                                                                             class="img-fluid bg-img" alt="product">
                                                                     </div>
                                                                 </div>
-                                                                <div class="product-detail detail-center1 pt-2">
+                                                                <div class="product-detail detail-center1 pt-2"
+                                                                    style="border-radius: 0px 0px 10px 10px">
                                                                     <h6 class="text-secondary font-weight-bold">
                                                                         <?= limit_string($product_show['name'], 15) ?>
                                                                     </h6>
