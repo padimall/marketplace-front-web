@@ -15,7 +15,7 @@ $product_detail_image = $product_detail_data['image'];
 ?>
 
 <!-- section start -->
-<section class="section-big-pt-space bg-light rounded bg-light">
+<section class="section-big-pt-space rounded ">
     <div class="collection-wrapper mb-4">
         <div class="custom-container">
             <div class="row">

@@ -24,10 +24,12 @@ if ($agent_status == 0) {
         include("supplier-list.php");
     } elseif (isset($_GET['supplier-detail'])) {
         include("supplier-detail.php");
-    } elseif (isset($_GET['supplier-product-detail'])) {
+    } elseif (isset($_GET['product-detail'])) {
         include("supplier-product-detail.php");
     } elseif (isset($_GET['supplier-search'])) {
         include("supplier-list.php");
+    } elseif (isset($_GET['agent-product'])) {
+        include("agent-product.php");
     } else {
         include("beranda.php");
     }

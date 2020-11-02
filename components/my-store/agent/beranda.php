@@ -34,7 +34,7 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-title">
-                    <h3>Produk Anda</h3><a href="#">Lihat Daftar</a>
+                    <h3>Produk Anda</h3><a href="?agent-product">Lihat Daftar</a>
                 </div>
                 <div class="box-content">
                     <p>Lihat dan atur semua Produk Anda</p>
