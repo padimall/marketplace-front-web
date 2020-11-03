@@ -25593,3 +25593,9 @@ body.dark {
     background-color: #F97C2D;
     color : white !important;
 }
+
+.img-agent-product {
+    object-fit:cover; 
+    border-radius: .25em .25em 0px 0px;
+    height:150px;
+}

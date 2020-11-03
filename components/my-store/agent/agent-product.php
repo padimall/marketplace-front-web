@@ -30,15 +30,15 @@ if ($product_agent['status'] != 1) {
 
         <div class="col-md-4 col-lg-4 col-sm-12">
             <a href="?product-detail&target=<?= $pad['id'] ?>">
-                <div class="card" style="border-radius: 25px;">
-                    <img class="card-img-top" src="<?= $pad_image ?>" alt="<?= $pad['name'] ?>"
-                        style="border-radius: 25px 25px 0px 0px">
+                <div class="card rounded">
+                    <img class="img-agent-product" src="<?= $pad_image ?>" alt="<?= $pad['name'] ?>">
                     <div class="card-body">
                         <div class="product-detail detail-center1">
                             <span
-                                class="detail-price text-secondary font-weight-bold float-left"><?= limit_string($pad['name'], 15) ?>
+                                class="detail-price text-secondary font-weight-bold float-left"><?= limit_string($pad['name'], 12) ?>
                             </span>
-                            <span class="detail-price text-success font-weight-bold float-right"><?= $pad_price ?>
+                            <span
+                                class="detail-price text-success font-weight-bold float-right"><?= limit_string($pad_price, 12) ?>
                             </span>
                         </div>
                     </div>
