@@ -29,9 +29,9 @@ $header = array(
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="big-deal">
-    <meta name="keywords" content="big-deal">
-    <meta name="author" content="big-deal">
+    <meta name="description" content="Padi Mall Indonesia - Marketplace UMKM">
+    <meta name="keywords" content="Padi Mall">
+    <meta name="author" content="PT. Padi Mall INA Marketplace">
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 
