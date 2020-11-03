@@ -50,11 +50,12 @@ searchProduct();
                         produksi UMKM baik secara lokal maupun international.</p>
                     <p class="mb-2 text-justify"> Padimall juga beroperasi dengan platform online store, marketplace
                         berbasis
-                        Website dan Aplikasi Mobile. Sebagai market place bagi produk UKM dan komoditi eksport,
-                        beroperasi di berbagai jaringan dan wilayah Indonesia dengan kemitraan 550 kota dan kabupaten
-                        serta memasarkan 1 juta produk UKM. Menjadi Mitra BumDes/Industri rumahan (Home Industry)/
-                        Pesantren di desa dan kecamatan. Menyediakan layanan pengiriman berdasarkan kesiapan produsen
-                        dalam jangka waktu 3-7 hari waktu eksor.</p>
+                        Website dan Aplikasi Mobile. Sebagai market place bagi produk UKM dan komoditi ekspor,
+                        beroperasi di berbagai jaringan dan wilayah Indonesia dengan kemitraan 550 Kota dan Kabupaten
+                        serta memasarkan 1 juta produk UMKM dan menjadi Mitra BumDes/Industri rumahan (Home
+                        Industry)/Pesantren di desa dan kecamatan. Menyediakan layanan pengiriman berdasarkan kesiapan
+                        produsen
+                        dalam jangka waktu 3-7 hari waktu ekspor.</p>
 
                     <h4>Visi</h4>
                     <p class="mb-2 text-justify"> Meningkatkan perekonomian Negara secara digital baik lokal maupun

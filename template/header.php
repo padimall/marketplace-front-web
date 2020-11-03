@@ -87,7 +87,7 @@ $category_list_api_data = $category_list_api_data['data'];
                             <i class="fa fa-volume-control-phone tell" aria-hidden="true"></i>
                             <span class="contact-item">
                                 call us
-                                <span>+62 822 7466 0962</span>
+                                <span>+62 813-9603-1115</span>
                             </span>
                             <div class="onhover-dropdown ">
                                 <?php
@@ -221,7 +221,7 @@ $category_list_api_data = $category_list_api_data['data'];
                                         <!--Tentang END-->
                                         <!--Contact start-->
                                         <li class="mega">
-                                            <a href="contact" class="light-menu-item">
+                                            <a href="#" class="light-menu-item">
                                                 Hubungi Kami
                                             </a>
                                         </li>
