@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="follow">
+                        <div class="follow rounded">
                             <div class="app-link-block  bg-transparent">
                                 <div class="container">
                                     <div class="row">

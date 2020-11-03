@@ -88,20 +88,19 @@ searchProduct();
                                                         href="product-detail?name=<?= $product_show['name'] ?>&target=<?= $product_show['id'] ?>">
                                                         <div class="product">
                                                             <div class="product-box ">
-                                                                <div class="product-imgbox"
-                                                                    style="border-radius: 10px 10px 0px 0px">
+                                                                <div class="product-imgbox">
                                                                     <div class="product-front">
                                                                         <img src="<?= $product_show_image ?>"
                                                                             class="img-fluid bg-img" alt="product">
                                                                     </div>
                                                                 </div>
-                                                                <div class="product-detail detail-center1 pt-2"
-                                                                    style="border-radius: 0px 0px 10px 10px">
-                                                                    <h6 class="text-secondary font-weight-bold">
+                                                                <div class="product-detail detail-center1 pt-2">
+                                                                    <h6
+                                                                        class="text-secondary font-weight-bold float-left">
                                                                         <?= limit_string($product_show['name'], 15) ?>
                                                                     </h6>
                                                                     <span
-                                                                        class="detail-price text-success"><?= rupiah($product_show['price']) ?></span>
+                                                                        class="detail-price text-success float-right"><?= rupiah($product_show['price']) ?></span>
                                                                 </div>
                                                             </div>
                                                         </div>

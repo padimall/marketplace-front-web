@@ -48,7 +48,8 @@ $product_detail_image = $product_detail_data['image'];
                     <div class="col-lg-4">
                         <div class="product-slick no-arrow">
                             <div>
-                                <img src="./assets/images/no-picture.jpg" alt="" class="img-fluid image_zoom_cls-0">
+                                <img src="./assets/images/no-picture.jpg" alt=""
+                                    class="img-fluid image_zoom_cls-0 rounded">
                             </div>
                         </div>
                     </div>
@@ -65,7 +66,7 @@ $product_detail_image = $product_detail_data['image'];
                                 ?>
                             <div>
                                 <img src="<?= $product_detail_image_view_url ?>" alt=""
-                                    class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?>">
+                                    class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?> rounded">
                             </div>
                             <?php } ?>
                         </div>

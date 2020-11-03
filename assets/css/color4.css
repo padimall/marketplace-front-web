@@ -1645,7 +1645,8 @@ button {
 .product .product-box .product-imgbox {
     position: relative;
     overflow: hidden;
-    background-color: #fff
+    background-color: #fff;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .product .product-box .product-imgbox img {
@@ -7509,7 +7510,11 @@ button {
 }
 
 .collection-product-wrapper .product-wrapper-grid .product-box .product-detail {
-    padding-top: 0
+    border-radius: 0px 0px 10px 10px; 
+    padding-top: 15px !important; 
+    padding-bottom: 2.5em !important; 
+    padding-left: 1em; 
+    padding-right: 1em;
 }
 
 .collection-product-wrapper .product-wrapper-grid .product-box .product-detail p {

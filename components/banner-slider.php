@@ -14,7 +14,7 @@
                     ?>
                     <div>
                         <div class="slider-banner p-center slide-banner-1">
-                            <div class="slider-img">
+                            <div class="slider-img" style="border-radius: 25px;">
                                 <img src="<?= $banner_show['image'] ?>" class=" bg-img" alt="slider">
                             </div>
                         </div>
