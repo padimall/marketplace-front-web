@@ -61,3 +61,22 @@ if (isset($_POST['btn-update-agent-profile'])) {
         }
     }
 }
+
+if (isset($_GET['action']) == "delete") {
+    $productID = htmlentities($_GET['target']);
+
+    $product_delete = Requests::post($api_endpoint . "product/delete?target_id=" . $productID, $header);
+    $product_delete = json_decode($product_delete->body, TRUE);
+
+    if ($product_delete['status'] == 1) {
+        //berhasil menghapus
+        message_badge_success("Berhasil menghapus produk");
+        header("Location: my-store?agent-product");
+        exit();
+    } else {
+        //gagal menghapus
+        message_badge_failed("Gagal menghapus produk");
+        header("Location: my-store?agent-product");
+        exit();
+    }
+}

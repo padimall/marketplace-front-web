@@ -29,3 +29,9 @@ $(document).ready(function() {
     $('#agent-supplier-list').DataTable();
 });
 </script>
+
+<script>
+$('#confirm-delete').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+});
+</script>
