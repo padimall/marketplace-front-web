@@ -47,7 +47,7 @@ $('.inputToggle').on('change', function() {
         var status = 0
     }
 
-    console.log(status)
+    // console.log(status)
 
     $.ajax({
         url: 'ajaxRequests.php',
@@ -55,18 +55,18 @@ $('.inputToggle').on('change', function() {
         data: 'target=' + targetID + '&status=' + status,
         success: function(hasil) {
             if (hasil == 1) {
-                console.log("Berhasil memperbaharui");
+                // console.log("Berhasil memperbaharui");
                 if (status == 1) {
                     document.getElementById("message_js").innerHTML =
                         `<span class="float-right badge badge-success p-1 mt-1">Berhasil menampilkan produk</span>`;
                 } else {
                     document.getElementById("message_js").innerHTML =
-                        `<span class="float-right badge badge-success p-1 mt-1">Berhasil menonaktifkan produk</span>`;
+                        `<span class="float-right badge badge-secondary p-1 mt-1">Berhasil menonaktifkan produk</span>`;
                 }
 
             } else {
-                console.log(hasil)
-                console.log("Gagal memperbaharui");
+                // console.log(hasil)
+                // console.log("Gagal memperbaharui");
                 document.getElementById("message_js").innerHTML =
                     `<span class="float-right badge badge-danger p-1 mt-1">Gagal memperbaharui status</span>`;
             }
