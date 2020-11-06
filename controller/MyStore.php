@@ -71,12 +71,20 @@ if (isset($_GET['action']) == "delete") {
     if ($product_delete['status'] == 1) {
         //berhasil menghapus
         message_badge_success("Berhasil menghapus produk");
-        header("Location: my-store?agent-product");
+        if (isset($_GET['supplier'])) {
+            header("Location: my-store?product");
+        } else {
+            header("Location: my-store?agent-product");
+        }
         exit();
     } else {
         //gagal menghapus
         message_badge_failed("Gagal menghapus produk");
-        header("Location: my-store?agent-product");
+        if (isset($_GET['supplier'])) {
+            header("Location: my-store?product");
+        } else {
+            header("Location: my-store?agent-product");
+        }
         exit();
     }
 }
