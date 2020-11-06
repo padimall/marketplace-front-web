@@ -35,8 +35,9 @@ if ($product_agent['status'] != 1) {
             ?>
 
         <div class="col-md-4 col-lg-4 col-sm-12 mb-2">
-            <div class="card rounded">
-                <img class="img-agent-product" src="<?= $pad_image ?>" alt="<?= $pad['name'] ?>">
+            <div class="card" style="border-radius: 25px;">
+                <img class="img-agent-product" src="<?= $pad_image ?>" alt="<?= $pad['name'] ?>"
+                    style='border-radius: 25px 25px 0px 0px'>
                 <div class="card-body">
                     <div class="product-detail detail-center1" style="display: flow-root;">
                         <span

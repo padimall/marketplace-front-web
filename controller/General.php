@@ -57,6 +57,11 @@ function rupiah($string)
     return "Rp " . number_format($string, 0, ',', '.');
 }
 
+function string_number($string)
+{
+    return number_format($string, 0, ',', '.');
+}
+
 function checkIfSupplier($api_endpoint, $header)
 {
     $checkSupplier = Requests::post($api_endpoint, $header);

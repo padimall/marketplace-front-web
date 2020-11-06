@@ -31,7 +31,46 @@ $(document).ready(function() {
 </script>
 
 <script>
+//confirm modal delete produk agent
 $('#confirm-delete').on('show.bs.modal', function(e) {
     $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 });
+
+//update status supplier agent
+$('.inputToggle').on('change', function() {
+    var checkvalid = $(this).is(':checked');
+    var targetID = $(this).val();
+
+    if (checkvalid === true) {
+        var status = 1
+    } else {
+        var status = 0
+    }
+
+    console.log(status)
+
+    $.ajax({
+        url: 'ajaxRequests.php',
+        type: 'POST',
+        data: 'target=' + targetID + '&status=' + status,
+        success: function(hasil) {
+            if (hasil == 1) {
+                console.log("Berhasil memperbaharui");
+                if (status == 1) {
+                    document.getElementById("message_js").innerHTML =
+                        `<span class="float-right badge badge-success p-1 mt-1">Berhasil menampilkan produk</span>`;
+                } else {
+                    document.getElementById("message_js").innerHTML =
+                        `<span class="float-right badge badge-success p-1 mt-1">Berhasil menonaktifkan produk</span>`;
+                }
+
+            } else {
+                console.log(hasil)
+                console.log("Gagal memperbaharui");
+                document.getElementById("message_js").innerHTML =
+                    `<span class="float-right badge badge-danger p-1 mt-1">Gagal memperbaharui status</span>`;
+            }
+        }
+    });
+})
 </script>

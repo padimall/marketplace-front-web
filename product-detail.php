@@ -115,15 +115,18 @@ $product_detail_image = $product_detail_data['image'];
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Berat </p>
-                                                    <p class="float-right"><?= $product_detail_weight ?>Kg</p>
+                                                    <p class="float-right">
+                                                        <?= string_number($product_detail_weight) ?>Kg</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Stok </p>
-                                                    <p class="float-right"><?= $product_detail_stock ?>Kg</p>
+                                                    <p class="float-right"><?= string_number($product_detail_stock) ?>Kg
+                                                    </p>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Minimal Pemesanan </p>
-                                                    <p class="float-right"><?= $product_detail_min_order ?>Kg</p>
+                                                    <p class="float-right">
+                                                        <?= string_number($product_detail_min_order) ?>Kg</p>
                                                 </div>
                                             </div>
                                         </div>

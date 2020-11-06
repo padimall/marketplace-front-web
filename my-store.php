@@ -34,6 +34,7 @@ checkSessionValid();
                     <div class="dashboard-right">
                         <div class="dashboard">
                             <?php message_check() ?>
+                            <div id="message_js"></div>
                             <h3 class="mb-3">Toko Saya</h3>
                             <hr>
                             <?php
