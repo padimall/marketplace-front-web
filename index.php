@@ -78,7 +78,7 @@ searchProduct();
                                                 $product_category_data = $product_category_data['data'];
                                                 foreach ($product_category_data as $product_show) {
                                                     if (empty($product_show['image'][0])) {
-                                                        $product_show_image = "./assets/images/layout-4/product/1.jpg";
+                                                        $product_show_image = "./assets/images/no-picture.jpg";
                                                     } else {
                                                         $product_show_image = $product_show['image'][0]['url'];
                                                     }

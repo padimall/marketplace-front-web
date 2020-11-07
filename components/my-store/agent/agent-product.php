@@ -26,7 +26,7 @@ if ($product_agent['status'] != 1) {
     <div class="row review-block mt-4">
         <?php
             foreach ($product_agent_data as $pad) {
-                if (is_null($pad['image'])) {
+                if (is_null($pad['image'][0]['url'])) {
                     $pad_image = "./assets/images/no-picture.jpg";
                 } else {
                     $pad_image = $pad['image'][0]['url'];

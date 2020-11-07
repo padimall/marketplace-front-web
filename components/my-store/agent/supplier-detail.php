@@ -102,12 +102,16 @@ if ($product_supplier['status'] != 1) {
     <div class="row review-block mt-4">
         <?php
             foreach ($product_supplier_data as $psd) {
-                if (is_null($psd['image'])) {
+                // echo $psd['image'];
+                if (is_null($psd['image'][0]['url'])) {
                     $psd_image = "./assets/images/no-picture.jpg";
                 } else {
                     $psd_image = $psd['image'][0]['url'];
                 }
+
                 $psd_price = "Rp " . number_format($psd['price'], 0, ',', '.');
+
+
             ?>
 
         <div class="col-md-4 col-lg-4 col-sm-12">

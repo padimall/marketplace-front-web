@@ -58,7 +58,8 @@ searchProduct();
                                             array_push($array_sub_category, $show_sub_category['id']);
                                     ?>
                         <div>
-                            <a href="product-category?name=<?= $show_sub_category['name'] ?>">
+                            <a
+                                href="product-category?name=<?= $show_sub_category['name'] ?>&target=<?= $show_sub_category['id'] ?>">
                                 <div class="box-category-contain rounded"
                                     style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<?= $show_sub_category['image'] ?>');background-size:cover;background-repeat: no-repeat">
                                     <h4>
