@@ -10,8 +10,8 @@ include('config_api.php');
     <meta name="description" content="Padi Mall Indonesia - Marketplace UMKM">
     <meta name="keywords" content="Padi Mall">
     <meta name="author" content="PT. Padi Mall INA Marketplace">
-    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">

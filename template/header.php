@@ -216,7 +216,8 @@ $category_list_api_data = $category_list_api_data['data'];
 
                                         <!--Tentang-->
                                         <li>
-                                            <a href="about" class="light-menu-item">Tentang Padi Mall</a>
+                                            <a href="https://padimall.co.id" target="_blank"
+                                                class="light-menu-item">Tentang Padi Mall</a>
                                         </li>
                                         <!--Tentang END-->
                                         <!--Contact start-->

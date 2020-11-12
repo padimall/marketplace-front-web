@@ -40,7 +40,7 @@
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: #84B214;
 }
 
 input:focus+.slider {
@@ -115,9 +115,9 @@ if ($product_supplier['status'] != 1) {
             ?>
 
         <div class="col-md-4 col-lg-4 col-sm-12">
-            <div class="card" style="border-radius: 25px;">
+            <div class="card" style="border-radius: 12px;">
                 <img class="img-agent-product" src="<?= $psd_image ?>" alt="<?= $psd['name'] ?>"
-                    style='border-radius: 25px 25px 0px 0px'>
+                    style='border-radius: 12px 12px 0px 0px'>
                 <div class="card-body">
                     <div class="product-detail detail-center1">
                         <span

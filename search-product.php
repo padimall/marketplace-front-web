@@ -67,7 +67,7 @@ searchProduct();
                                                                         <?= limit_string($sp['name'], 15) ?>
                                                                     </h6>
                                                                     <span
-                                                                        class="detail-price text-success float-right"><?= rupiah($sp['price']) ?>
+                                                                        class="detail-price text-success float-right"><?= limit_string(rupiah($sp['price']), 10) ?>
                                                                     </span>
                                                                 </div>
                                                             </div>
