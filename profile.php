@@ -5,6 +5,8 @@
 include('template/head.php');
 searchProduct();
 
+// var_dump($header);
+
 $profile_api = Requests::post($api_endpoint . "user", $header);
 $profile_api_status = $profile_api->success;
 $profile_api_data = json_decode($profile_api->body, TRUE);
@@ -29,7 +31,8 @@ if (isset($_POST['btn-profile'])) {
         $inputan = "name=" . $_POST['name'] . "&address=" . $_POST['address'] . "&email=" . $_POST['email'];
     } else {
         // email dan phone diubah
-        $inputan = "name=" . $_POST['name'] . "&address=" . $_POST['address'] . "&phone=" . $_POST['phone'] . "&email=" . $_POST['email'];
+        $inputan = "name=" . $_POST['name'] . "&address=" . $_POST['address'] . "&phone=" . $_POST['phone'] . "&email=" .
+            $_POST['email'];
     }
 
     $profile_update_api = Requests::post($api_endpoint . "user/update?" . $inputan, $header);
@@ -37,7 +40,8 @@ if (isset($_POST['btn-profile'])) {
     $profile_update_api_data = json_decode($profile_update_api->body, TRUE);
     if ($profile_update_status) {
         //berhasil mengubah data
-        $_SESSION['profileMessage'] = '<span class="float-right badge badge-success p-1 mt-1">Berhasil memperbaharui data</span>';
+        $_SESSION['profileMessage'] = '<span class="float-right badge badge-success p-1 mt-1">Berhasil memperbaharui
+    data</span>';
         header("Location: profile?success");
         exit();
     } else {

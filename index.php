@@ -4,6 +4,19 @@
 <?php
 include('template/head.php');
 searchProduct();
+
+// $header = [
+//     'headers' => [
+//         'Content-Type' => 'application/json',
+//         'X-Requested-With' => 'XMLHttpRequest',
+//         'Authorization' => 'Bearer ' . $bearerKey
+//     ]
+// ];
+
+// $client = new \GuzzleHttp\Client(["base_uri" => "https://api.padimall.id/api/v1/"]);
+// $response = $client->post("agent/detail", $header);
+// $response = json_decode($response->getBody(), TRUE);
+// var_dump($response);
 ?>
 
 <body class="bg-light ">
