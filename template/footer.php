@@ -5,14 +5,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo-detail">
-                            <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries, but also the leap into electronic typesetting, </p>
+                            <p class="text-justify">Platform pemasaran (marketplace) yang menjembatani dan membimbing
+                                pelaku usaha kecil dan menengah dalam merintis, menjalankan dan memasarkan produk-produk
+                                hasil produksi UMKM baik secara lokal maupun international.</p>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <div class="follow rounded">
                             <div class="app-link-block  bg-transparent">
                                 <div class="container">
@@ -40,80 +38,6 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="col-md-12">
-                        <div class="top-category">
-                            <div class="row footer-theme">
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="footer-box">
-                                        <div class="footer-title">
-                                            <h5>top category</h5>
-                                            <div class="line"></div>
-                                        </div>
-                                        <div class="footer-contant">
-                                            <ul>
-                                                <li><a href="#">new fashion</a></li>
-                                                <li><a href="#">smart device</a></li>
-                                                <li><a href="#">wooden furniture</a></li>
-                                                <li><a href="#">golden jewellery</a></li>
-                                                <li><a href="#">digital camera</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="footer-box">
-                                        <div class="footer-title">
-                                            <h5>my account</h5>
-                                            <div class="line"></div>
-                                        </div>
-                                        <div class="footer-contant">
-                                            <ul>
-                                                <li><a href="#">about us</a></li>
-                                                <li><a href="#">contact us</a></li>
-                                                <li><a href="#">terms & conditions</a></li>
-                                                <li><a href="#">returns & exchanges</a></li>
-                                                <li><a href="#">shipping & delivery</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="footer-box">
-                                        <div class="footer-title">
-                                            <h5>quick link</h5>
-                                            <div class="line"></div>
-                                        </div>
-                                        <div class="footer-contant">
-                                            <ul>
-                                                <li><a href="#">store location</a></li>
-                                                <li><a href="#"> my account</a></li>
-                                                <li><a href="#"> orders tracking</a></li>
-                                                <li><a href="#"> size guide</a></li>
-                                                <li><a href="#">FAQ </a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="footer-box footer-contact-box">
-                                        <div class="footer-title">
-                                            <h5>contact us</h5>
-                                            <div class="line"></div>
-                                        </div>
-                                        <div class="footer-contant">
-                                            <ul class="contact-list">
-                                                <li><i class="fa fa-map-marker"></i>big deal store demo
-                                                    store<br>india-<span>3654123</span></li>
-                                                <li><i class="fa fa-phone"></i>call us: <span>123-456-7898</span></li>
-                                                <li><i class="fa fa-envelope-o"></i>email us: support@bigdeal.com</li>
-                                                <li><i class="fa fa-fax"></i>fax <span>123456</span></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>

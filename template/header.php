@@ -222,8 +222,8 @@ $category_list_api_data = $category_list_api_data['data'];
                                         <!--Tentang END-->
                                         <!--Contact start-->
                                         <li class="mega">
-                                            <a href="#" class="light-menu-item">
-                                                Hubungi Kami
+                                            <a href="statistik" class="light-menu-item">
+                                                Statistik
                                             </a>
                                         </li>
                                         <!--Contact end-->

@@ -38,7 +38,7 @@ $product_detail_image = $product_detail_data['image'];
     <!--header end-->
 
     <!-- section start -->
-    <section class="section-big-pt-space bg-light">
+    <section class="ratio_square section-big-pt-space bg-light">
         <div class="collection-wrapper mb-4">
             <div class="custom-container">
                 <div class="row">
@@ -58,7 +58,6 @@ $product_detail_image = $product_detail_data['image'];
                     ?>
                     <div class="col-lg-4">
                         <div class="product-slick no-arrow">
-                            sads
                             <?php
                                 foreach ($product_detail_image as $product_detail_image_view) {
                                     $product_detail_image_view_url = $product_detail_image_view['url'];
@@ -66,7 +65,7 @@ $product_detail_image = $product_detail_data['image'];
                                 ?>
                             <div>
                                 <img src="<?= $product_detail_image_view_url ?>" alt=""
-                                    class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?> rounded">
+                                    class="img-fluid bg-img image_zoom_cls-<?= $product_detail_image_view_id ?> rounded">
                             </div>
                             <?php } ?>
                         </div>
@@ -80,7 +79,7 @@ $product_detail_image = $product_detail_data['image'];
                                         ?>
                                     <div>
                                         <img src="<?= $product_detail_image_view_url ?>" alt=""
-                                            class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?>">
+                                            class="img-fluid bg-img image_zoom_cls-<?= $product_detail_image_view_id ?>">
                                     </div>
                                     <?php } ?>
                                 </div>
@@ -133,11 +132,27 @@ $product_detail_image = $product_detail_data['image'];
                                     </div>
                                 </div>
                             </div>
+                            <div class="border-product">
+                                <?php
+                                if (is_null($product_detail_data['agent']['image'])) {
+                                    $agent_profile_image = "./assets/images/no-picture.jpg";
+                                } else {
+                                    $agent_profile_image = $product_detail_data['agent']['image'];
+                                }
+                                ?>
+                                <div class="row rounded-circle float-right">
+                                    <div class="review-box" style="padding: 10px">
+                                        <img class="img-fluid float-left rounded-circle"
+                                            src="<?= $agent_profile_image ?>"
+                                            alt="<?= $product_detail_data['agent']['name'] ?>">
+                                        <h5 class="float-right pl-2"><?= $product_detail_data['agent']['name'] ?></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </section>
     <!-- Section ends -->
