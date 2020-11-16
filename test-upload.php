@@ -184,13 +184,23 @@ if (isset($_POST['tambah'])) {
 
     // var_dump($multipart_contain);
     array_push($multipart_contain, $multipart);
-
+    
+    
+    //this is the magic
+    $test = [];
+    for ($i = 0; $i<3; $i++){
+        $test [] = [
+                'name'     => 'image[]',
+                'contents' => fopen($image_temp, 'r'),
+                'filename' => $image_name
+            ];
+    }
+    
+    
+    
     $response = $client->request('POST', 'product/store?' . $inputan_string, [
         'headers' => $headers,
-        'multipart' => [
-            $multipart,
-            $multipart
-        ]
+        'multipart' => $test
     ]);
 
     $response = json_decode($response->getBody(), TRUE);
@@ -213,7 +223,7 @@ if (isset($_POST['tambah'])) {
 <body>
 
     <form method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="name" value="check">
+        <input type="text" name="name" placeholder="name" value="Rudi test">
         <br>
         <input type="text" name="price" placeholder="price" value="10928">
         <br>
@@ -221,7 +231,7 @@ if (isset($_POST['tambah'])) {
         <br>
         <input type="text" name="description" placeholder="description" value="ini deskripsi">
         <br>
-        <input type="text" name="category" placeholder="category" value="48f64301-774b-4215-8bc8-509c80a5537e">
+        <input type="text" name="category" placeholder="category" value="cf379a8c-11dd-4640-82ab-dd7e90f09319">
         <br>
         <input type="text" name="stock" placeholder="stock" value="23">
         <br>
