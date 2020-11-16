@@ -121,10 +121,10 @@ searchProduct();
                                                                 <div class="product-detail detail-center1 pt-2">
                                                                     <h6
                                                                         class="text-secondary font-weight-bold float-left">
-                                                                        <?= limit_string($show_product_category['name'], 15) ?>
+                                                                        <?= limit_string($show_product_category['name'], 10) ?>
                                                                     </h6>
                                                                     <span
-                                                                        class="detail-price text-success float-right"><?= rupiah($show_product_category['price']) ?>
+                                                                        class="detail-price text-success float-right"><?= limit_string(rupiah($show_product_category['price']), 10) ?>
                                                                     </span>
                                                                 </div>
                                                             </div>

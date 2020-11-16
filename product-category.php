@@ -68,10 +68,10 @@ searchProduct();
                                                                     style="border-radius: 0px 0px 10px 10px">
                                                                     <h6
                                                                         class="text-secondary font-weight-bold float-left">
-                                                                        <?= limit_string($product_category_show['name'], 15) ?>
+                                                                        <?= limit_string($product_category_show['name'], 10) ?>
                                                                     </h6>
                                                                     <span
-                                                                        class="detail-price text-success float-right"><?= $product_category_show_price ?>
+                                                                        class="detail-price text-success float-right"><?= limit_string($product_category_show_price, 10) ?>
                                                                     </span>
                                                                 </div>
                                                             </div>
