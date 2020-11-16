@@ -30,6 +30,8 @@ if ($agent_status == 0) {
         include("supplier-list.php");
     } elseif (isset($_GET['agent-product'])) {
         include("agent-product.php");
+    } elseif (isset($_GET['add-product'])) {
+        include("add-product.php");
     } else {
         include("beranda.php");
     }

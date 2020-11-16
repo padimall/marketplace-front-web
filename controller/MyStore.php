@@ -88,3 +88,31 @@ if (isset($_GET['action']) == "delete") {
         exit();
     }
 }
+
+if (isset($_POST['btn-add-product'])) {
+
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $weight = $_POST['weight'];
+    $description = $_POST['description'];
+    $category = $_POST['category'];
+    $stock = $_POST['stock'];
+    $min_order = $_POST['min_order'];
+
+    $inputan_string = "name=" . $name . "&price=" . $price . "&weight=" . $weight . "&description=" . $description . "&category=" . $category . "&stock=" . $stock . "&min_order=" . $min_order;
+
+    $response = $client->request('POST', 'product/store?' . $inputan_string, [
+        'headers' => $headers_guzzle,
+    ]);
+
+    $response = json_decode($response->getBody(), TRUE);
+
+    if ($response['status']) {
+        message_badge_success("Berhasil menambahkan produk");
+        header("Location: my-store?agent-product");
+    } else {
+        message_badge_failed("Gagal menambahkan produk");
+        header("Location: my-store?agent-product");
+    }
+    exit();
+}

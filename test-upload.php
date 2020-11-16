@@ -184,20 +184,20 @@ if (isset($_POST['tambah'])) {
 
     // var_dump($multipart_contain);
     array_push($multipart_contain, $multipart);
-    
-    
+
+
     //this is the magic
     $test = [];
-    for ($i = 0; $i<3; $i++){
-        $test [] = [
-                'name'     => 'image[]',
-                'contents' => fopen($image_temp, 'r'),
-                'filename' => $image_name
-            ];
+    for ($i = 0; $i < 3; $i++) {
+        $test[] = [
+            'name'     => 'image[]',
+            'contents' => fopen($image_temp, 'r'),
+            'filename' => $image_name
+        ];
     }
-    
-    
-    
+
+
+
     $response = $client->request('POST', 'product/store?' . $inputan_string, [
         'headers' => $headers,
         'multipart' => $test
@@ -240,9 +240,12 @@ if (isset($_POST['tambah'])) {
         <input type="file" name="image1">
         <br>
 
+
+
         <button name="tambah">Tambah Produk</button>
     </form>
 
 </body>
+<script></script>
 
 </html>

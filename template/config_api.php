@@ -26,3 +26,16 @@ $header = array(
     "X-Requested-With" => " XMLHttpRequest",
     "Authorization" => " Bearer $bearerKey"
 );
+
+$headers_guzzle = [
+    'Authorization' => 'Bearer ' . $bearerKey
+];
+
+$client = new \GuzzleHttp\Client([
+    'base_uri' => 'https://api.padimall.id/api/v1/',
+    'defaults' => [
+        'exceptions' => false
+    ]
+]);
+
+global $client;

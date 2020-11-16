@@ -9,6 +9,7 @@ if ($product_agent['status'] != 1) {
 <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center col-grid-box">
     <img alt="" class="img-fluid" src="./assets/images/no-product.png" width="50%">
     <h4 class="mt-2">Maaf, kamu belum memiliki produk</h4>
+    <a href="?add-product" class="btn btn-sm btn-theme-green text-right mt-2"> + Tambah Produk Sekarang</a>
 </div>
 <?php
 } else {
@@ -19,7 +20,7 @@ if ($product_agent['status'] != 1) {
     <div class="row">
         <div class="col">
             <h5 class="text-left float-left mb-3 mt-1" style="color: #272727;">Daftar Produk </h5>
-            <a href="" class="btn btn-sm btn-theme-green text-right float-right"> + Tambah Produk</a>
+            <a href="?add-product" class="btn btn-sm btn-theme-green text-right float-right"> + Tambah Produk</a>
         </div>
     </div>
 

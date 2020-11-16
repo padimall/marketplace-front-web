@@ -95,6 +95,7 @@ searchProduct();
                                                     } else {
                                                         $product_show_image = $product_show['image'][0]['url'];
                                                     }
+                                                    // var_dump(($product_show));
                                                 ?>
                                                 <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-grid-box">
                                                     <a
@@ -110,7 +111,7 @@ searchProduct();
                                                                 <div class="product-detail detail-center1 pt-2">
                                                                     <h6
                                                                         class="text-secondary font-weight-bold float-left">
-                                                                        <?= limit_string($product_show['name'], 12) ?>
+                                                                        <?= limit_string($product_show['name'], 10) ?>
                                                                     </h6>
                                                                     <span
                                                                         class="detail-price text-success float-right"><?= limit_string(rupiah($product_show['price']), 10) ?></span>
