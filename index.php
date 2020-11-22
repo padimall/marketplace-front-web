@@ -4,19 +4,6 @@
 <?php
 include('template/head.php');
 searchProduct();
-
-// $header = [
-//     'headers' => [
-//         'Content-Type' => 'application/json',
-//         'X-Requested-With' => 'XMLHttpRequest',
-//         'Authorization' => 'Bearer ' . $bearerKey
-//     ]
-// ];
-
-// $client = new \GuzzleHttp\Client(["base_uri" => "https://api.padimall.id/api/v1/"]);
-// $response = $client->post("agent/detail", $header);
-// $response = json_decode($response->getBody(), TRUE);
-// var_dump($response);
 ?>
 
 <body class="bg-light ">
@@ -108,13 +95,12 @@ searchProduct();
                                                                             class="img-fluid bg-img" alt="product">
                                                                     </div>
                                                                 </div>
-                                                                <div class="product-detail detail-center1 pt-2">
-                                                                    <h6
-                                                                        class="text-secondary font-weight-bold float-left">
-                                                                        <?= limit_string($product_show['name'], 10) ?>
+                                                                <div class="product-detail detail-center1">
+                                                                    <h6 class="text-secondary font-weight-bold">
+                                                                        <?= limit_string($product_show['name'], 24) ?>
                                                                     </h6>
                                                                     <span
-                                                                        class="detail-price text-success float-right"><?= limit_string(rupiah($product_show['price']), 10) ?></span>
+                                                                        class="detail-price text-success"><?= limit_string(rupiah($product_show['price']), 15) ?></span>
                                                                 </div>
                                                             </div>
                                                         </div>

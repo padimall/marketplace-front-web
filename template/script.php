@@ -85,10 +85,10 @@ function readURL(input) {
         var count = input.dataset.count;
 
         reader.onload = function(e) {
-            $('#wrap'+count).hide();
+            $('#wrap' + count).hide();
 
-            $('#show'+count).attr('src', e.target.result);
-            $('#content'+count).show();
+            $('#show' + count).attr('src', e.target.result);
+            $('#content' + count).show();
 
             // $('.image-title').html(input.files[0].name);
         };
@@ -102,15 +102,23 @@ function readURL(input) {
 
 function removeUpload(input) {
     var del = input.dataset.delete;
-    
-    $('#input'+del).replaceWith($('#input'+del).clone());
-    $('#content'+del).hide();
-    $('#wrap'+del).show();
+
+    $('#input' + del).replaceWith($('#input' + del).clone());
+    $('#content' + del).hide();
+    $('#wrap' + del).show();
 }
 $('.image-upload-wrap').bind('dragover', function() {
     $('.image-upload-wrap').addClass('image-dropping');
 });
 $('.image-upload-wrap').bind('dragleave', function() {
     $('.image-upload-wrap').removeClass('image-dropping');
+});
+</script>
+
+<script>
+$('.numberFormat').on('keyup', function() {
+    var n = parseInt($(this).val().replace(/\D/g, ''), 10);
+    if (isNaN(n)) n = 0;
+    $(this).val(n.toLocaleString("id-ID"));
 });
 </script>

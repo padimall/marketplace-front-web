@@ -121,17 +121,18 @@
                 ?>
                 <div class="col-md-3">
                     <div class="file-upload">
-                        <div class="image-upload-wrap" id="wrap<?= $i?>">
-                            <input class="file-upload-input" id="input<?= $i?>" data-count="<?= $i?>" name="image[]" type='file' onchange="readURL(this);"
-                                accept="image/*" />
+                        <div class="image-upload-wrap" id="wrap<?= $i ?>">
+                            <input class="file-upload-input" id="input<?= $i ?>" data-count="<?= $i ?>" name="image[]"
+                                type='file' onchange="readURL(this);" accept="image/*" />
                             <div class="drag-text">
-                                <h5><i class="fa fa-plus"></i>Gambar</h5>
+                                <h5><i class="fa fa-plus"></i> Gambar</h5>
                             </div>
                         </div>
-                        <div class="file-upload-content" id="content<?= $i?>">
-                            <img class="file-upload-image img-fluid" id="show<?= $i?>" src="#" alt="your image" />
+                        <div class="file-upload-content" id="content<?= $i ?>">
+                            <img class="file-upload-image img-fluid" id="show<?= $i ?>" src="#" alt="your image" />
                             <div class="image-title-wrap text-center">
-                                <button type="button" onclick="removeUpload(this)" data-delete="<?= $i?>" class="remove-image text-center rounded">
+                                <button type="button" onclick="removeUpload(this)" data-delete="<?= $i ?>"
+                                    class="remove-image text-center rounded">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>
@@ -179,28 +180,28 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="price">Harga</label>
-                <input type="number" name="price" class="form-control format-rupiah" id="rupiah" required="">
+                <input type="text" name="price" class="form-control numberFormat text-right" required="">
                 <small class="float-right text-muted mt-1">Satuan dalam Rp.</small>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="weight">Berat</label>
-                <input type="number" name="weight" class="form-control format-rupiah" id="rupiah" required="">
+                <input type="text" name="weight" class="form-control numberFormat text-right" required="">
                 <small class="float-right text-muted mt-1">Satuan dalam Kg</small>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="stock">Stok</label>
-                <input type="number" name="stock" class="form-control format-rupiah" id="rupiah" required="">
+                <input type="text" name="stock" class="form-control numberFormat text-right" required="">
                 <small class="float-right text-muted mt-1">Satuan dalam Kg</small>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="order">Min. Order</label>
-                <input type="number" name="min_order" class="form-control format-rupiah" id="rupiah" required="">
+                <input type="text" name="min_order" class="form-control numberFormat text-right" required="">
                 <small class="float-right text-muted mt-1">Satuan dalam Kg</small>
             </div>
         </div>

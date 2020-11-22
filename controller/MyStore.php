@@ -91,27 +91,32 @@ if (isset($_GET['action']) == "delete") {
 
 if (isset($_POST['btn-add-product'])) {
 
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $weight = $_POST['weight'];
-    $description = $_POST['description'];
-    $category = $_POST['category'];
-    $stock = $_POST['stock'];
-    $min_order = $_POST['min_order'];
-    
+    function replaceKomma($string)
+    {
+        return str_replace(".", "", $string);
+    }
+
+    $name = htmlentities($_POST['name']);
+    $price = htmlentities(replaceKomma($_POST['price']));
+    $weight = htmlentities(replaceKomma($_POST['weight']));
+    $description = htmlentities($_POST['description']);
+    $category = htmlentities($_POST['category']);
+    $stock = replaceKomma($_POST['stock']);
+    $min_order = replaceKomma($_POST['min_order']);
+
     //baru
-    
+
     $multipart = [];
     $image_name = $_FILES['image']['name'];
     $image_temp = $_FILES['image']['tmp_name'];
-    
-    for ($i = 0; $i <sizeof($image_name); $i++) {
-        if($image_name[$i] != ''){
+
+    for ($i = 0; $i < sizeof($image_name); $i++) {
+        if ($image_name[$i] != '') {
             $multipart[] = [
                 'name'     => 'image[]',
                 'contents' => fopen($image_temp[$i], 'r'),
                 'filename' => $image_name[$i]
-            ];   
+            ];
         }
     }
 

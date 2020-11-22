@@ -23796,7 +23796,7 @@ body.dark {
 }
 
 .img-agent-product {
-    object-fit: fill;
+    object-fit: cover;
     border-radius: .25em .25em 0px 0px;
     height: 150px;
 }

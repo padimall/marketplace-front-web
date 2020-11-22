@@ -13,7 +13,7 @@ include('config_api.php');
     <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="./assets/css/admin.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/admin.css"> -->
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
