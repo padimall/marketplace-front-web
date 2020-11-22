@@ -13,6 +13,7 @@ include('config_api.php');
     <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
+    <link rel="stylesheet" type="text/css" href="./assets/css/admin.css">
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
@@ -31,6 +32,7 @@ include('config_api.php');
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
 
     <!-- Theme css -->
+
     <link rel="stylesheet" type="text/css" href="./assets/css/color4.css" media="screen" id="color">
     <!-- <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.22/datatables.min.css" /> -->

@@ -121,9 +121,10 @@ if ($product_supplier['status'] != 1) {
                 <div class="card-body">
                     <div class="product-detail detail-center1">
                         <span
-                            class="detail-price text-secondary font-weight-bold float-left"><?= limit_string($psd['name'], 15) ?>
+                            class="detail-price text-secondary font-weight-bold float-left"><?= limit_string($psd['name'], 10) ?>
                         </span>
-                        <span class="detail-price text-success font-weight-bold float-right"><?= $psd_price ?>
+                        <span
+                            class="detail-price text-success font-weight-bold float-right"><?= limit_string($psd_price, 8) ?>
                         </span>
                     </div>
                 </div>
