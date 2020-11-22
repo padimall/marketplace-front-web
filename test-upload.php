@@ -185,28 +185,41 @@ if (isset($_POST['tambah'])) {
     // var_dump($multipart_contain);
     array_push($multipart_contain, $multipart);
 
-
-    //this is the magic
-    $test = [];
-    for ($i = 0; $i < 3; $i++) {
-        $test[] = [
+    $multipart = [];
+    $image_name = $_FILES['image']['name'];
+    $image_temp = $_FILES['image']['tmp_name'];
+    
+    for ($i = 0; $i <sizeof($image_name); $i++) {
+        $multipart[] = [
             'name'     => 'image[]',
-            'contents' => fopen($image_temp, 'r'),
-            'filename' => $image_name
+            'contents' => fopen($image_temp[$i], 'r'),
+            'filename' => $image_name[$i]
         ];
     }
+    
+    var_dump($multipart);
+
+    //this is the magic
+    // $test = [];
+    // for ($i = 0; $i < 3; $i++) {
+    //     $test[] = [
+    //         'name'     => 'image[]',
+    //         'contents' => fopen($image_temp, 'r'),
+    //         'filename' => $image_name
+    //     ];
+    // }
 
 
 
-    $response = $client->request('POST', 'product/store?' . $inputan_string, [
-        'headers' => $headers,
-        'multipart' => $test
-    ]);
+    // $response = $client->request('POST', 'product/store?' . $inputan_string, [
+    //     'headers' => $headers,
+    //     'multipart' => $test
+    // ]);
 
-    $response = json_decode($response->getBody(), TRUE);
-    var_dump(($response));
-    echo "<br>";
-    // var_dump($multipart_contain);
+    // $response = json_decode($response->getBody(), TRUE);
+    // var_dump(($response));
+    // echo "<br>";
+    // var_dump($multipart);
 }
 
 ?>
@@ -237,7 +250,7 @@ if (isset($_POST['tambah'])) {
         <br>
         <input type="text" name="min_order" placeholder="min_order" value="2333">
         <br>
-        <input type="file" name="image1">
+        <input type="file" name="image[]">
         <br>
 
 

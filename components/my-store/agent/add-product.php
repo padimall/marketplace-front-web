@@ -121,17 +121,17 @@
                 ?>
                 <div class="col-md-3">
                     <div class="file-upload">
-                        <div class="image-upload-wrap">
-                            <input class="file-upload-input" name="image[]" type='file' onchange="readURL(this);"
+                        <div class="image-upload-wrap" id="wrap<?= $i?>">
+                            <input class="file-upload-input" id="input<?= $i?>" data-count="<?= $i?>" name="image[]" type='file' onchange="readURL(this);"
                                 accept="image/*" />
                             <div class="drag-text">
-                                <h5><i class="fa fa-plus"></i> Gambar</h5>
+                                <h5><i class="fa fa-plus"></i>Gambar</h5>
                             </div>
                         </div>
-                        <div class="file-upload-content">
-                            <img class="file-upload-image img-fluid" src="#" alt="your image" />
+                        <div class="file-upload-content" id="content<?= $i?>">
+                            <img class="file-upload-image img-fluid" id="show<?= $i?>" src="#" alt="your image" />
                             <div class="image-title-wrap text-center">
-                                <button type="button" onclick="removeUpload()" class="remove-image text-center rounded">
+                                <button type="button" onclick="removeUpload(this)" data-delete="<?= $i?>" class="remove-image text-center rounded">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>

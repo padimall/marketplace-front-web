@@ -94,7 +94,7 @@ searchProduct();
             </div>
 
             <!-- agent padimall -->
-            <h3 class="text-left text-secondary mt-5">Agen Padimall yang tersebar diseluruh Indonesia</h3>
+            <h3 class="text-left text-secondary mt-5">Pengguna Padimall yang tersebar diseluruh Indonesia</h3>
             <div id="load_component"></div>
         </div>
     </section>

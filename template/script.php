@@ -82,12 +82,13 @@ function readURL(input) {
     if (input.files && input.files[0]) {
 
         var reader = new FileReader();
+        var count = input.dataset.count;
 
         reader.onload = function(e) {
-            $('.image-upload-wrap').hide();
+            $('#wrap'+count).hide();
 
-            $('.file-upload-image').attr('src', e.target.result);
-            $('.file-upload-content').show();
+            $('#show'+count).attr('src', e.target.result);
+            $('#content'+count).show();
 
             // $('.image-title').html(input.files[0].name);
         };
@@ -99,10 +100,12 @@ function readURL(input) {
     }
 }
 
-function removeUpload() {
-    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-    $('.file-upload-content').hide();
-    $('.image-upload-wrap').show();
+function removeUpload(input) {
+    var del = input.dataset.delete;
+    
+    $('#input'+del).replaceWith($('#input'+del).clone());
+    $('#content'+del).hide();
+    $('#wrap'+del).show();
 }
 $('.image-upload-wrap').bind('dragover', function() {
     $('.image-upload-wrap').addClass('image-dropping');

@@ -98,11 +98,26 @@ if (isset($_POST['btn-add-product'])) {
     $category = $_POST['category'];
     $stock = $_POST['stock'];
     $min_order = $_POST['min_order'];
+    
+    //baru
+    
+    $multipart = [];
+    $image_name = $_FILES['image']['name'];
+    $image_temp = $_FILES['image']['tmp_name'];
+    
+    for ($i = 0; $i <sizeof($image_name); $i++) {
+        $multipart[] = [
+            'name'     => 'image[]',
+            'contents' => fopen($image_temp[$i], 'r'),
+            'filename' => $image_name[$i]
+        ];
+    }
 
     $inputan_string = "name=" . $name . "&price=" . $price . "&weight=" . $weight . "&description=" . $description . "&category=" . $category . "&stock=" . $stock . "&min_order=" . $min_order;
 
     $response = $client->request('POST', 'product/store?' . $inputan_string, [
         'headers' => $headers_guzzle,
+        'multipart' => $multipart
     ]);
 
     $response = json_decode($response->getBody(), TRUE);
@@ -111,7 +126,7 @@ if (isset($_POST['btn-add-product'])) {
         message_badge_success("Berhasil menambahkan produk");
         header("Location: my-store?agent-product");
     } else {
-        message_badge_failed("Gagal menambahkan produk");
+        message_badge_failed("Gagal menambahkan produk".sizeof($image_temp));
         header("Location: my-store?agent-product");
     }
     exit();
