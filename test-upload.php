@@ -190,11 +190,14 @@ if (isset($_POST['tambah'])) {
     $image_temp = $_FILES['image']['tmp_name'];
     
     for ($i = 0; $i <sizeof($image_name); $i++) {
-        $multipart[] = [
+        if($image_name[$i] != ''){
+            $multipart[] = [
             'name'     => 'image[]',
-            'contents' => fopen($image_temp[$i], 'r'),
+            'contents' => $image_temp[$i],
             'filename' => $image_name[$i]
-        ];
+            ];    
+        }
+        
     }
     
     var_dump($multipart);
@@ -250,6 +253,7 @@ if (isset($_POST['tambah'])) {
         <br>
         <input type="text" name="min_order" placeholder="min_order" value="2333">
         <br>
+        <input type="file" name="image[]">
         <input type="file" name="image[]">
         <br>
 
