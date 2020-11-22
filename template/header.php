@@ -18,8 +18,12 @@ $category_list_api_data = $category_list_api_data['data'];
                                 Download App
                             </h6>
                             <ul>
-                                <li><a><i class="fa fa-apple"></i></a></li>
-                                <li><a><i class="fa fa-android"></i></a></li>
+                                <!-- <li><a><i class="fa fa-apple"></i></a></li> -->
+                                <li>
+                                    <a href="https://play.google.com/store/apps/details?id=com.padimallindonesia.padimall_app"
+                                        target="_blank">
+                                        <i class="fa fa-android"></i></a>
+                                </li>
                             </ul>
                         </div>
                     </div>

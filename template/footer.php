@@ -10,7 +10,7 @@
                                 hasil produksi UMKM baik secara lokal maupun international.</p>
                         </div>
                     </div>
-                    <!-- <div class="col-md-12">
+                    <div class="col-md-12">
                         <div class="follow rounded">
                             <div class="app-link-block  bg-transparent">
                                 <div class="container">
@@ -18,13 +18,16 @@
                                         <div class="app-link-bloc-contain p-0">
                                             <div class="app-item-group">
                                                 <div class="app-item">
-                                                    <img src="./assets/images/layout-1/app/1.png" class="img-fluid"
-                                                        alt="app-banner">
+                                                    <a href="https://play.google.com/store/apps/details?id=com.padimallindonesia.padimall_app"
+                                                        target="_blank">
+                                                        <img src="./assets/images/layout-1/app/1.png" class="img-fluid"
+                                                            alt="app-banner">
+                                                    </a>
                                                 </div>
-                                                <div class="app-item">
+                                                <!-- <div class="app-item">
                                                     <img src="./assets/images/layout-1/app/2.png" class="img-fluid"
                                                         alt="app-banner">
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="app-item-group ">
                                                 <div class="sosiyal-block">
@@ -43,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <div class="sub-footer mt-3">

@@ -8706,9 +8706,9 @@ button {
 }
 
 .review-box {
-    -webkit-box-shadow: 0 11px 35px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 11px 35px 2px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    /* -webkit-box-shadow: 0 11px 35px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 11px 35px 2px rgba(0, 0, 0, 0.1); 
+    padding: 30px;*/
     text-align: center;
     border-radius: 5px;
     background-color: #fff
