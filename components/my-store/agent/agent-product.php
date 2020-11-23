@@ -42,7 +42,7 @@ if ($product_agent['status'] != 1) {
                 <div class="card-body">
                     <div class="product-detail detail-center1" style="display: flow-root;">
                         <span
-                            class="detail-price text-secondary font-weight-bold float-left"><?= limit_string($pad['name'], 12) ?>
+                            class="detail-price text-secondary font-weight-bold float-left"><?= limit_string($pad['name'], 18) ?>
                         </span>
                         <span
                             class="detail-price text-success font-weight-bold float-right"><?= limit_string($pad_price, 12) ?>
@@ -58,7 +58,7 @@ if ($product_agent['status'] != 1) {
                         data-target="#confirm-delete" class="btn btn-danger btn-sm float-right">
                         <i class="ti-trash" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="btn btn-info btn-sm float-right mr-2">
+                    <a href="?edit-product&target=<?= $pad['id'] ?>" class="btn btn-info btn-sm float-right mr-2">
                         <i class="ti-pencil" aria-hidden="true"></i>
                     </a>
                 </div>

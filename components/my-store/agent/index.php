@@ -32,6 +32,8 @@ if ($agent_status == 0) {
         include("agent-product.php");
     } elseif (isset($_GET['add-product'])) {
         include("add-product.php");
+    } elseif (isset($_GET['edit-product'])) {
+        include("edit-product.php");
     } else {
         include("beranda.php");
     }
