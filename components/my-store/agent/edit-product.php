@@ -33,8 +33,8 @@
 }
 
 .file-upload-content {
-    display: none;
     text-align: center;
+    display: none;
 }
 
 .file-upload-input {
@@ -125,20 +125,31 @@ $pd = $product_detail['data'];
             <div class="row">
                 <?php
                 $pd_image = $pd['image'];
-                foreach ($pd_image as $pdm) {
-
+                for($i=0; $i<4; $i++) {
+                    $src = '#';
+                    $up_dis = '';
+                    $img_dis = '';
+                    $name = 'image[]';
+                    $exist = '';
+                    if(isset($pd_image[$i])){
+                        $src = $pd_image[$i]['url'];
+                        $up_dis = 'display : none';
+                        $img_dis = 'display : inline';
+                        $exist = $pd_image[$i]['id'];
+                        $name = '';
+                    }
                 ?>
                 <div class="col-md-3">
                     <div class="file-upload">
-                        <div class="image-upload-wrap" id="wrap<?= $i ?>">
-                            <input class="file-upload-input" id="input<?= $i ?>" data-count="<?= $i ?>" name="image[]"
+                        <div style = "<?= $up_dis?>" class="image-upload-wrap" id="wrap<?= $i ?>">
+                            <input class="file-upload-input" id="input<?= $i ?>" data-exist="<?= $exist?>" data-count="<?= $i ?>" name="<?= $name?>"
                                 type='file' onchange="readURL(this);" accept="image/*" />
                             <div class="drag-text">
                                 <h5><i class="fa fa-plus"></i> Gambar</h5>
                             </div>
                         </div>
-                        <div class="file-upload-content" id="content<?= $i ?>">
-                            <img class="file-upload-image img-fluid" id="show<?= $i ?>" src="#" alt="your image" />
+                        <div style="<?= $img_dis?>" class="file-upload-content" id="content<?= $i ?>">
+                            <img src="<?= $src?>" class="file-upload-image img-fluid" id="show<?= $i ?>" src="#" alt="your image" />
                             <div class="image-title-wrap text-center">
                                 <button type="button" onclick="removeUpload(this)" data-delete="<?= $i ?>"
                                     class="remove-image text-center rounded">
@@ -172,9 +183,13 @@ $pd = $product_detail['data'];
                 ?>
                 <select class="form-control selectpicker" name="category" data-live-search="true" size="1" required>
                     <?php
-                    echo "<option value='" . $pd['category'] . "' data-tokens='" . $pc['name'] . "'>" . $pc['name'] . "</option>";
+                    //ku perbaiki ya ki
+                    // echo "<option value='" . $pd['category'] . "' data-tokens='" . $pc['name'] . "'>" . $pc['name'] . "</option>";
                     foreach ($product_category as $pc) {
-                        echo "<option value='" . $pc['id'] . "' data-tokens='" . $pc['name'] . "'>" . $pc['name'] . "</option>";
+                        $selected = '';
+                        if($pc['id'] == $pd['category'])
+                            $selected = 'selected';
+                        echo "<option value='" . $pc['id']. "' data-tokens='" . $pc['name'] . "'".$selected.">" . $pc['name'] . "</option>";
                     }
                     ?>
                 </select>
@@ -220,7 +235,9 @@ $pd = $product_detail['data'];
             </div>
         </div>
         <div class="col-md-12 mt-2">
-            <button name="btn-add-product" class="btn btn-rounded black-btn float-right">
+            <input type="hidden" name="target" value="<?= $_GET['target'] ?>">
+            <input type="hidden" id="del_img" name="del_img" value="">
+            <button name="btn-edit-product" class="btn btn-rounded black-btn float-right">
                 Simpan Perubahan
             </button>
         </div>

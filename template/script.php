@@ -102,10 +102,25 @@ function readURL(input) {
 
 function removeUpload(input) {
     var del = input.dataset.delete;
-
+    var exist = $('#input'+del).data('exist');
+    var del_img = $('#del_img').val();
+    
     $('#input' + del).replaceWith($('#input' + del).clone());
     $('#content' + del).hide();
     $('#wrap' + del).show();
+    
+    if(exist != ''){
+        if(del_img != ''){
+            $('#del_img').val(del_img+'@'+exist);   
+        }
+        else {
+            $('#del_img').val(exist);
+        }
+        $('#input'+del).attr('data-exist','');
+    }
+    
+    $('#input'+del).data('');
+    $('#input'+del).attr('name','image[]')
 }
 $('.image-upload-wrap').bind('dragover', function() {
     $('.image-upload-wrap').addClass('image-dropping');

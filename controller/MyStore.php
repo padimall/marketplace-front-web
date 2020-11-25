@@ -138,3 +138,84 @@ if (isset($_POST['btn-add-product'])) {
     }
     exit();
 }
+
+if (isset($_POST['btn-edit-product'])) {
+
+    function replaceKomma($string)
+    {
+        return str_replace(".", "", $string);
+    }
+
+    $name = htmlentities($_POST['name']);
+    $price = htmlentities(replaceKomma($_POST['price']));
+    $weight = htmlentities(replaceKomma($_POST['weight']));
+    $description = htmlentities($_POST['description']);
+    $category = htmlentities($_POST['category']);
+    $stock = replaceKomma($_POST['stock']);
+    $min_order = replaceKomma($_POST['min_order']);
+
+    //baru
+    $target = $_POST['target'];
+
+
+    $inputan_string = "target_id=".$target."&name=" . $name . "&price=" . $price . "&weight=" . $weight . "&description=" . $description . "&category=" . $category . "&stock=" . $stock . "&min_order=" . $min_order;
+
+    $response = $client->request('POST', 'product/update?' . $inputan_string, [
+        'headers' => $headers_guzzle
+    ]);
+
+    $response = json_decode($response->getBody(), TRUE);
+    
+    //handle image
+    
+    //handle deleted image
+    $deleted = $_POST['del_img'];
+    if($deleted != ''){
+        $list_deleted = explode('@',$deleted);
+    
+        for($i=0; $i<sizeof(list_deleted); $i++){
+            $input_img = 'target_id='.$list_deleted[$i];
+        
+            $response_delete = $client->request('POST', 'product-image/delete?' . $input_img, [
+                'headers' => $headers_guzzle,
+            ]);
+        } 
+        
+    }
+    
+    
+    //handle new image
+    $multipart = [];
+    $image_name = $_FILES['image']['name'];
+    $image_temp = $_FILES['image']['tmp_name'];
+
+    for ($i = 0; $i < sizeof($image_name); $i++) {
+        if ($image_name[$i] != '') {
+            $multipart[] = [
+                'name'     => 'image[]',
+                'contents' => fopen($image_temp[$i], 'r'),
+                'filename' => $image_name[$i]
+            ];
+        }
+    }
+    
+    $inputan_string_img = 'product_id='.$target;
+    
+    $response_img = $client->request('POST', 'product-image/store?' . $inputan_string_img, [
+        'headers' => $headers_guzzle,
+        'multipart' => $multipart
+    ]);
+
+    $response_img = json_decode($response_img->getBody(), TRUE);
+    
+
+    if ($response['status']) {
+        message_badge_success("Berhasil mengubah produk");
+        header("Location: my-store?agent-product");
+    } else {
+        message_badge_failed("Gagal mengubah produk");
+        header("Location: my-store?agent-product");
+    }
+    exit();
+}
+
