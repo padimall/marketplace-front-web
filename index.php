@@ -84,7 +84,7 @@ searchProduct();
                                                     }
                                                     // var_dump(($product_show));
                                                 ?>
-                                                <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-grid-box">
+                                                <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-grid-box ">
                                                     <a
                                                         href="product-detail?name=<?= $product_show['name'] ?>&target=<?= $product_show['id'] ?>">
                                                         <div class="product">
@@ -96,11 +96,12 @@ searchProduct();
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-detail detail-center1">
-                                                                    <h6 class="text-secondary font-weight-bold">
-                                                                        <?= limit_string($product_show['name'], 24) ?>
+                                                                    <h6
+                                                                        class="text-secondary font-weight-bold card-product-title">
+                                                                        <?= limit_string($product_show['name'], 37) ?>
                                                                     </h6>
                                                                     <span
-                                                                        class="detail-price text-success"><?= limit_string(rupiah($product_show['price']), 15) ?></span>
+                                                                        class="text-center text-success font-weight-bold"><?= limit_string(rupiah($product_show['price']), 15) ?></span>
                                                                 </div>
                                                             </div>
                                                         </div>

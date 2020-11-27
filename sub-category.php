@@ -119,8 +119,9 @@ searchProduct();
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-detail detail-center1 pt-2">
-                                                                    <h6 class="text-secondary font-weight-bold">
-                                                                        <?= limit_string($show_product_category['name'], 24) ?>
+                                                                    <h6
+                                                                        class="text-secondary font-weight-bold card-product-title">
+                                                                        <?= limit_string($show_product_category['name'], 37) ?>
                                                                     </h6>
                                                                     <span class="detail-price text-success">
                                                                         <?= limit_string(rupiah($show_product_category['price']), 15) ?>

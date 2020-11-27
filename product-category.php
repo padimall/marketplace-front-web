@@ -66,8 +66,9 @@ searchProduct();
                                                                 </div>
                                                                 <div class="product-detail detail-center1 pt-2"
                                                                     style="border-radius: 0px 0px 10px 10px">
-                                                                    <h6 class="text-secondary font-weight-bold">
-                                                                        <?= limit_string($product_category_show['name'], 24) ?>
+                                                                    <h6
+                                                                        class="text-secondary font-weight-bold card-product-title">
+                                                                        <?= limit_string($product_category_show['name'], 37) ?>
                                                                     </h6>
                                                                     <span
                                                                         class="detail-price text-success"><?= limit_string($product_category_show_price, 15) ?>

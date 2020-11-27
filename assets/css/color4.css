@@ -23800,3 +23800,7 @@ body.dark {
     border-radius: .25em .25em 0px 0px;
     height: 150px;
 }
+
+.card-product-title {
+    height: 50px;
+}
