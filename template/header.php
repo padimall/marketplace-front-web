@@ -225,11 +225,11 @@ $category_list_api_data = $category_list_api_data['data'];
                                         </li>
                                         <!--Tentang END-->
                                         <!--Contact start-->
-                                        <li class="mega">
+                                        <!-- <li class="mega">
                                             <a href="statistik" class="light-menu-item">
                                                 Statistik
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <!--Contact end-->
                                     </ul>
                                 </nav>
