@@ -15,7 +15,7 @@ $product_detail_image = $product_detail_data['image'];
 ?>
 
 <!-- section start -->
-<section class="section-big-pt-space rounded ">
+<section class="section-big-pt-space ratio_square rounded">
     <div class="collection-wrapper mb-4">
         <div class="custom-container">
             <div class="row">
@@ -34,7 +34,6 @@ $product_detail_image = $product_detail_data['image'];
                 ?>
                 <div class="col-lg-4">
                     <div class="product-slick no-arrow">
-                        sads
                         <?php
                             foreach ($product_detail_image as $product_detail_image_view) {
                                 $product_detail_image_view_url = $product_detail_image_view['url'];
@@ -42,7 +41,7 @@ $product_detail_image = $product_detail_data['image'];
                             ?>
                         <div>
                             <img src="<?= $product_detail_image_view_url ?>" alt=""
-                                class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?>">
+                                class="img-fluid bg-img  image_zoom_cls-<?= $product_detail_image_view_id ?>">
                         </div>
                         <?php } ?>
                     </div>
@@ -56,7 +55,7 @@ $product_detail_image = $product_detail_data['image'];
                                     ?>
                                 <div>
                                     <img src="<?= $product_detail_image_view_url ?>" alt=""
-                                        class="img-fluid  image_zoom_cls-<?= $product_detail_image_view_id ?>">
+                                        class="img-fluid bg-img image_zoom_cls-<?= $product_detail_image_view_id ?>">
                                 </div>
                                 <?php } ?>
                             </div>
