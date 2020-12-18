@@ -119,13 +119,11 @@ if (isset($_SESSION['bearerKey'])) {
                                                             </h4>
                                                             <?php
                                                                     if ($inv['status'] === 0) {
-                                                                        echo 23;
+                                                                        echo '<a href="#"
+                                                                        class="btn btn-theme-orange btn-sm float-right">Bayar
+                                                                        Sekarang</a>';
                                                                     }
-
                                                                     ?>
-                                                            <a href="#"
-                                                                class="btn btn-theme-orange btn-sm float-right">Bayar
-                                                                Sekarang</a>
                                                         </div>
                                                     </div>
                                                 </div>
