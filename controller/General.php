@@ -123,3 +123,8 @@ function limit_string($string, $length)
         return $y;
     }
 }
+
+function limit_string_inv($string, $length)
+{
+    return substr($string, 0, $length);
+}
