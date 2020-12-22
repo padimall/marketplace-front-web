@@ -63,89 +63,27 @@ if (isset($_SESSION['bearerKey'])) {
                                         </ul>
                                         <hr>
                                         <div class="tab-content-cls product">
+                                            <?php
+                                            //sekali request untuk efisiensi 
+                                            $getInvoicesListOrder = Requests::post($api_endpoint . "invoice/list", $header);
+                                            ?>
                                             <div id="tab-1" class="tab-content active default">
-                                                <?php
-                                                $getInvoicesList = Requests::post($api_endpoint . "invoice/list", $header);
-                                                if ($getInvoicesList->success) {
-                                                    $getInvoicesList = json_decode($getInvoicesList->body, TRUE);
-                                                    $getInvoicesList = $getInvoicesList['invoice_groups'];
-                                                    foreach ($getInvoicesList as $inv) {
-                                                ?>
-                                                <div class="col-md-12 mt-3">
-                                                    <div class="card rounded">
-                                                        <div class="card-header">
-                                                            <span
-                                                                class="float-left badge badge-secondary p-1 ">INV-<?= limit_string_inv(strtoupper($inv['id']), 13) ?></span>
-                                                            <span class="float-right"><?= $inv['created_at'] ?></span>
-                                                        </div>
-
-                                                        <?php
-                                                                foreach ($inv['invoices'] as $inv_stuff) {
-                                                                ?>
-                                                        <div class="card-body">
-                                                            <h5 class="mb-2 text-theme-orange">
-                                                                <?= $inv_stuff['agent_name'] ?>
-                                                            </h5>
-                                                            <?php
-                                                                        foreach ($inv_stuff['products'] as $inv_stuff_products) {
-                                                                        ?>
-                                                            <div class="row ratio_square">
-                                                                <div class="rounded ml-3">
-                                                                    <img src="<?= $inv_stuff_products['image'] ?>"
-                                                                        alt="<?= $inv_stuff_products['name'] ?>"
-                                                                        class="img-thumbnail-invoices">
-                                                                </div>
-                                                                <div class="ml-2">
-                                                                    <h4> <?= $inv_stuff_products['name'] ?>
-                                                                    </h4>
-                                                                    <p>Jumlah :
-                                                                        <?= string_number($inv_stuff_products['quantity']) ?>
-                                                                    </p>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <?php
-                                                                        }
-                                                                        ?>
-                                                        </div>
-                                                        <?php
-                                                                }
-                                                                ?>
-                                                        <div class="card-body mt--5">
-                                                            <h4 class="text-secondary float-left">Total
-                                                                Pesanan :
-                                                                <span
-                                                                    class="text-success font-weight-bolder"><?= rupiah($inv['amount']) ?></span>
-                                                            </h4>
-                                                            <?php
-                                                                    if ($inv['status'] === 0) {
-                                                                        echo '<a href="#"
-                                                                        class="btn btn-theme-orange btn-sm float-right">Bayar
-                                                                        Sekarang</a>';
-                                                                    }
-                                                                    ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php
-                                                    }
-                                                }
-                                                ?>
+                                                <?php include("components/history-order-components/all-order.php") ?>
                                             </div>
                                             <div id="tab-2" class="tab-content">
-                                                <h5 class="text-center">- coming soon -</h5>
+                                                <?php include("components/history-order-components/waiting-payment.php") ?>
                                             </div>
                                             <div id="tab-3" class="tab-content">
-                                                <h5 class="text-center">- coming soon -</h5>
+                                                <?php include("components/history-order-components/packaging.php") ?>
                                             </div>
                                             <div id="tab-4" class="tab-content">
-                                                <h5 class="text-center">- coming soon -</h5>
+                                                <?php include("components/history-order-components/on-deliver.php") ?>
                                             </div>
                                             <div id="tab-5" class="tab-content">
-                                                <h5 class="text-center">- coming soon -</h5>
+                                                <?php include("components/history-order-components/received.php") ?>
                                             </div>
                                             <div id="tab-6" class="tab-content">
-                                                <h5 class="text-center">- coming soon -</h5>
+                                                <?php include("components/history-order-components/canceled-order.php") ?>
                                             </div>
                                         </div>
                                     </div>
