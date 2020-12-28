@@ -132,23 +132,26 @@ $product_detail_image = $product_detail_data['image'];
                                     </div>
                                 </div>
                             </div>
-                            <div class="border-product">
-                                <?php
-                                if (is_null($product_detail_data['agent']['image'])) {
-                                    $agent_profile_image = "./assets/images/no-picture.jpg";
-                                } else {
-                                    $agent_profile_image = $product_detail_data['agent']['image'];
-                                }
-                                ?>
-                                <div class="row rounded-circle float-right">
-                                    <div class="review-box" style="padding: 10px">
-                                        <img class="img-fluid float-left rounded-circle"
-                                            src="<?= $agent_profile_image ?>"
-                                            alt="<?= $product_detail_data['agent']['name'] ?>">
-                                        <h5 class="float-right pl-2"><?= $product_detail_data['agent']['name'] ?></h5>
+                            <a href="agent-product?target_id=<?= $product_detail_data['agent']['id'] ?>">
+                                <div class="border-product">
+                                    <?php
+                                    if (is_null($product_detail_data['agent']['image'])) {
+                                        $agent_profile_image = "./assets/images/no-picture.jpg";
+                                    } else {
+                                        $agent_profile_image = $product_detail_data['agent']['image'];
+                                    }
+                                    ?>
+                                    <div class="row rounded-circle float-right">
+                                        <div class="review-box" style="padding: 10px">
+                                            <img class="img-fluid float-left rounded-circle"
+                                                src="<?= $agent_profile_image ?>"
+                                                alt="<?= $product_detail_data['agent']['name'] ?>">
+                                            <h5 class="float-right pl-2"><?= $product_detail_data['agent']['name'] ?>
+                                            </h5>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

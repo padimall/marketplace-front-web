@@ -24,8 +24,8 @@ if (isset($_SESSION['bearerKey'])) {
 
 $header = array(
     "Content-Type" => "application/json",
-    "X-Requested-With" => " XMLHttpRequest",
-    "Authorization" => " Bearer $bearerKey"
+    "X-Requested-With" => "XMLHttpRequest",
+    "Authorization" => "Bearer $bearerKey"
 );
 
 $headers_guzzle = [
