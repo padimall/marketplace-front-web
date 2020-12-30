@@ -132,7 +132,7 @@ $product_detail_image = $product_detail_data['image'];
                                     </div>
                                 </div>
                             </div>
-                            <a href="agent-product?target_id=<?= $product_detail_data['agent']['id'] ?>">
+                            <a href="product-agent?target_id=<?= $product_detail_data['agent']['id'] ?>">
                                 <div class="border-product">
                                     <?php
                                     if (is_null($product_detail_data['agent']['image'])) {
