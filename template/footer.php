@@ -7,7 +7,7 @@
                         <div class="logo-detail">
                             <p class="text-justify">Platform pemasaran (marketplace) yang menjembatani dan membimbing
                                 pelaku usaha kecil dan menengah dalam merintis, menjalankan dan memasarkan produk-produk
-                                hasil produksi UMKM baik secara lokal maupun international.</p>
+                                hasil produksi UMKM baik secara lokal maupun internasional.</p>
                         </div>
                     </div>
                     <div class="col-md-12">

@@ -119,13 +119,13 @@ $product_detail_image = $product_detail_data['image'];
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Stok </p>
-                                                    <p class="float-right"><?= string_number($product_detail_stock) ?>Kg
+                                                    <p class="float-right"><?= string_number($product_detail_stock) ?>
                                                     </p>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="float-left font-weight-bold">Minimal Pemesanan </p>
                                                     <p class="float-right">
-                                                        <?= string_number($product_detail_min_order) ?>Kg</p>
+                                                        <?= string_number($product_detail_min_order) ?></p>
                                                 </div>
                                             </div>
                                         </div>
