@@ -12,8 +12,8 @@ use GuzzleHttp\Psr7\Client;
 
 Requests::register_autoloader();
 
-// $api_endpoint = "https://api.padimall.id/api/v1/";
-$api_endpoint = "https://dev-api.padimall.id/api/v1/";
+$api_endpoint = "https://api.padimall.id/api/v1/";
+// $api_endpoint = "https://dev-api.padimall.id/api/v1/";
 $api_image = "https://api.padimall.id/";
 
 if (isset($_SESSION['bearerKey'])) {
